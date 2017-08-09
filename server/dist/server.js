@@ -4,7 +4,176 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /*import express from 'express';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     import bodyParser from 'body-parser';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     import fs from 'fs';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     import path from 'path';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     // import multer from 'multer';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     class Server {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         constructor() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app = express();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.fs = fs;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // this.upload = multer({dest: 'uploads/'});
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.dataFile = path.join(__dirname, '../data.json');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         configureApp() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.set('port', (process.env.PORT || 3000));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // this.app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.use(bodyParser.json());
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.use(bodyParser.urlencoded({ extended: true }));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         configureCORS() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // Additional middleware which will set headers that we need on each request.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.use((req, res, next) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 // Set permissive CORS header - this allows this server to be used only as
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 // an API server in conjunction with something like webpack-dev-server.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 res.setHeader('Access-Control-Allow-Origin', '*');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 // Disable caching so we'll always get the latest userDetails.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 res.setHeader('Cache-Control', 'no-cache');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 next();
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         configureRoutes() {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // Ignore this
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // this.app.post('/api/image', this.upload.single('image'), (req, res) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             //     console.log(req.file);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             //     res.json({image: 'http://localhost:1337/'+req.file.path})
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             // });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.get('/api/userDetails', (req, res) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 this.fs.readFile(this.dataFile, (err, data) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     if (err) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         console.error(err);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         process.exit(1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     res.json(JSON.parse(data));
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             });
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             this.app.post('/api/userDetails', (req, res) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 this.fs.readFile(this.dataFile, (err, data) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     if (err) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         console.error(err);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         process.exit(1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     var userDetails = JSON.parse(data);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     var newComment = {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         id: Date.now(),
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         author: req.body.author,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         text: req.body.text,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     };
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     userDetails.push(newComment);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), (err) => {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         if (err) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             console.error(err);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             process.exit(1);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     this.twilioClient.messages.create({
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       body: `Message from ${req.body.author}. Content: ${req.body.text}`,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       to: process.env.TWILIO_TO,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       from: process.env.TWILIO_FROM
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       // mediaUrl: 'http://www.yourserver.com/someimage.png'
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }, function(err, data) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       if (err) {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         console.error('Could not notify administrator');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         console.error(err);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       } else {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         console.log('Administrator notified');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     });*/
+/*                   res.json(userDetails);
+                });
+            });
+        });
+        this.app.put('/api/userDetails/:id', (req, res) => {
+            this.fs.readFile(this.dataFile, (err, data) => {
+                if (err) {
+                    console.error(err);
+                    process.exit(1);
+                }
+                let userDetails = JSON.parse(data);
+                let idIndex = 0;
+                let findCommentById = userDetails.filter(comment => {
+                    if (comment.id == req.params.id) {
+                        idIndex = userDetails.indexOf(comment);
+                        return comment;
+                    }
+                });
+                findCommentById[0].text = req.body.text;
+                findCommentById[0].author = req.body.author;
+
+                userDetails.splice(idIndex, 1, findCommentById[0]);
+                this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), function(err) {
+                    if (err) {
+                        console.error(err);
+                        process.exit(1);
+                    }
+                    res.json(userDetails);
+                });
+            });
+        });
+        this.app.delete('/api/userDetails/:id', (req, res) => {
+            this.fs.readFile(this.dataFile, (err, data) => {
+                if (err) {
+                    console.error(err);
+                    process.exit(1);
+                }
+                let userDetails = JSON.parse(data);
+                let idIndex = null;
+                let findCommentById = userDetails.filter(comment => {
+                    if (comment.id == req.params.id) {
+                        idIndex = userDetails.indexOf(comment);
+                        return comment;
+                    }
+                });
+
+                if (idIndex >= 0) {
+                    userDetails.splice(idIndex, 1);
+                }
+
+                this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), function(err) {
+                    if (err) {
+                        console.error(err);
+                        process.exit(1);
+                    }
+                    res.json(userDetails);
+                });
+            });
+        });
+    }
+
+    listen(port) {
+        this.app.listen(port, () => {
+            console.log(`Server started: http://localhost:${port}/`);
+        });
+    }
+
+    run() {
+        this.configureApp();
+        this.configureCORS()
+        this.configureRoutes();
+        this.listen(this.app.get('port'));
+    }
+}
+
+export default Server;
+
+*/
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 var _express = require('express');
 
@@ -28,6 +197,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 // import multer from 'multer';
 
+
 var Server = function () {
     function Server() {
         _classCallCheck(this, Server);
@@ -36,7 +206,7 @@ var Server = function () {
         this.fs = _fs2.default;
 
         // this.upload = multer({dest: 'uploads/'});
-        this.dataFile = _path2.default.join(__dirname, '../data.json');
+        this.dataFile = _path2.default.join(__dirname, '../profile.json');
     }
 
     _createClass(Server, [{
@@ -58,7 +228,7 @@ var Server = function () {
                 res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
                 res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
-                // Disable caching so we'll always get the latest comments.
+                // Disable caching so we'll always get the latest userDetails.
                 res.setHeader('Cache-Control', 'no-cache');
                 next();
             });
@@ -73,7 +243,7 @@ var Server = function () {
             //     console.log(req.file);
             //     res.json({image: 'http://localhost:1337/'+req.file.path})
             // });
-            this.app.get('/api/comments', function (req, res) {
+            this.app.get('/api/userDetails', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
@@ -82,96 +252,108 @@ var Server = function () {
                     res.json(JSON.parse(data));
                 });
             });
-            this.app.post('/api/comments', function (req, res) {
+
+            this.app.post('/api/userDetails', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    var comments = JSON.parse(data);
+                    var userDetails = JSON.parse(data);
 
-                    var newComment = {
+                    var newUserDetails = {
                         id: Date.now(),
-                        author: req.body.author,
-                        text: req.body.text
+                        name: req.body.name,
+                        text: req.body.text,
+                        picUrl: req.body.picUrl,
+                        videoUrl: req.body.videoUrl,
+                        extendedText: req.body.extendedText,
+                        time: Date.now(),
+                        likes: req.body.likes
+
                     };
 
-                    comments.push(newComment);
-                    _this.fs.writeFile(_this.dataFile, JSON.stringify(comments, null, 4), function (err) {
+                    userDetails.push(newUserDetails);
+                    _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
                         if (err) {
                             console.error(err);
                             process.exit(1);
                         }
-
-                        _this.twilioClient.messages.create({
-                            body: 'Message from ' + req.body.author + '. Content: ' + req.body.text,
-                            to: process.env.TWILIO_TO,
-                            from: process.env.TWILIO_FROM
-                            // mediaUrl: 'http://www.yourserver.com/someimage.png'
-                        }, function (err, data) {
-                            if (err) {
-                                console.error('Could not notify administrator');
-                                console.error(err);
-                            } else {
-                                console.log('Administrator notified');
-                            }
-                        });
-                        res.json(comments);
+                        /*
+                                                    this.twilioClient.messages.create({
+                                                      body: `Message from ${req.body.author}. Content: ${req.body.text}`,
+                                                      to: process.env.TWILIO_TO,
+                                                      from: process.env.TWILIO_FROM
+                                                      // mediaUrl: 'http://www.yourserver.com/someimage.png'
+                                                    }, function(err, data) {
+                                                      if (err) {
+                                                        console.error('Could not notify administrator');
+                                                        console.error(err);
+                                                      } else {
+                                                        console.log('Administrator notified');
+                                                      }
+                                                    });*/
+                        res.json(userDetails);
                     });
                 });
             });
-            this.app.put('/api/comments/:id', function (req, res) {
+            this.app.put('/api/userDetails/:id', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    var comments = JSON.parse(data);
+                    var userDetails = JSON.parse(data);
                     var idIndex = 0;
-                    var findCommentById = comments.filter(function (comment) {
-                        if (comment.id == req.params.id) {
-                            idIndex = comments.indexOf(comment);
-                            return comment;
+                    var findUserDetailById = userDetails.filter(function (userDetail) {
+                        if (userDetail.id == req.params.id) {
+                            idIndex = userDetails.indexOf(userDetail);
+                            return userDetail;
                         }
                     });
-                    findCommentById[0].text = req.body.text;
-                    findCommentById[0].author = req.body.author;
+                    findUserDetailById[0].text = req.body.text;
+                    findUserDetailById[0].name = req.body.name;
+                    findUserDetailById[0].picUrl = req.body.picUrl;
+                    findUserDetailById[0].videoUrl = req.body.videoUrl;
+                    findUserDetailById[0].extendedText = req.body.extendedText;
+                    findUserDetailById[0].time = req.body.time;
+                    findUserDetailById[0].likes = req.body.likes;
 
-                    comments.splice(idIndex, 1, findCommentById[0]);
-                    _this.fs.writeFile(_this.dataFile, JSON.stringify(comments, null, 4), function (err) {
+                    userDetails.splice(idIndex, 1, findUserDetailById[0]);
+                    _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
                         if (err) {
                             console.error(err);
                             process.exit(1);
                         }
-                        res.json(comments);
+                        res.json(userDetails);
                     });
                 });
             });
-            this.app.delete('/api/comments/:id', function (req, res) {
+            this.app.delete('/api/userDetails/:id', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    var comments = JSON.parse(data);
+                    var userDetails = JSON.parse(data);
                     var idIndex = null;
-                    var findCommentById = comments.filter(function (comment) {
-                        if (comment.id == req.params.id) {
-                            idIndex = comments.indexOf(comment);
-                            return comment;
+                    var findUserDetailById = userDetails.filter(function (userDetail) {
+                        if (userDetail.id == req.params.id) {
+                            idIndex = userDetails.indexOf(userDetail);
+                            return userDetail;
                         }
                     });
 
                     if (idIndex >= 0) {
-                        comments.splice(idIndex, 1);
+                        userDetails.splice(idIndex, 1);
                     }
 
-                    _this.fs.writeFile(_this.dataFile, JSON.stringify(comments, null, 4), function (err) {
+                    _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
                         if (err) {
                             console.error(err);
                             process.exit(1);
                         }
-                        res.json(comments);
+                        res.json(userDetails);
                     });
                 });
             });

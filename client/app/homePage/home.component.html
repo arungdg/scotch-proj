@@ -1,0 +1,81 @@
+<my-navbar></my-navbar>
+<div class="container-fluid" style="background-image: url(./assets/beach6.jpg);">
+    <div class="row align-items-center justify-content-center">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
+            Open modal Window
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Create new message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row justify-content-center">
+                            <textarea autofocus style="height:100px;"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn add-media">
+                                    <i class="fa fa-camera" aria-hidden="true"></i> Add Photo
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn add-media">
+                                    <i class="fa fa-video-camera" aria-hidden="true"></i> Add Video
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button type="button" class="btn post">Post</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarLists">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/photos' routerLinkActive='active'>PHOTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/videos' routerLinkActive='active'>VIDEOS</a>
+                    </li>
+                </ul>
+                <ul class=" navbar-nav my-2 my-lg-0">
+                    <li class="nav-item mr-sm-2">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/listView' routerLinkActive='active'>
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item my-2 my-sm-0">
+                        <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/gridView' routerLinkActive='active'>
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<h1>All posts view</h1>
+<div *ngIf="picUrl">
+    <img [src]=picUrl style="height:100px; width:250px;" />
+</div>
+<my-footer></my-footer>
