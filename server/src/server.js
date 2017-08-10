@@ -1,4 +1,4 @@
-/*import express from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -43,7 +43,7 @@ class Server {
         //     console.log(req.file);
         //     res.json({image: 'http://localhost:1337/'+req.file.path})
         // });
-        this.app.get('/api/userDetails', (req, res) => {
+        this.app.get('/api/comments', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
@@ -53,13 +53,13 @@ class Server {
             });
         });
 
-        this.app.post('/api/userDetails', (req, res) => {
+        this.app.post('/api/comments', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
                     process.exit(1);
                 }
-                var userDetails = JSON.parse(data);
+                var comments = JSON.parse(data);
 
                 var newComment = {
                     id: Date.now(),
@@ -67,8 +67,8 @@ class Server {
                     text: req.body.text,
                 };
 
-                userDetails.push(newComment);
-                this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), (err) => {
+                comments.push(newComment);
+                this.fs.writeFile(this.dataFile, JSON.stringify(comments, null, 4), (err) => {
                     if (err) {
                         console.error(err);
                         process.exit(1);
@@ -87,62 +87,62 @@ class Server {
                                                     console.log('Administrator notified');
                                                   }
                                                 });*/
-/*                   res.json(userDetails);
+                    res.json(comments);
                 });
             });
         });
-        this.app.put('/api/userDetails/:id', (req, res) => {
+        this.app.put('/api/comments/:id', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
                     process.exit(1);
                 }
-                let userDetails = JSON.parse(data);
+                let comments = JSON.parse(data);
                 let idIndex = 0;
-                let findCommentById = userDetails.filter(comment => {
+                let findCommentById = comments.filter(comment => {
                     if (comment.id == req.params.id) {
-                        idIndex = userDetails.indexOf(comment);
+                        idIndex = comments.indexOf(comment);
                         return comment;
                     }
                 });
                 findCommentById[0].text = req.body.text;
                 findCommentById[0].author = req.body.author;
 
-                userDetails.splice(idIndex, 1, findCommentById[0]);
-                this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), function(err) {
+                comments.splice(idIndex, 1, findCommentById[0]);
+                this.fs.writeFile(this.dataFile, JSON.stringify(comments, null, 4), function(err) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    res.json(userDetails);
+                    res.json(comments);
                 });
             });
         });
-        this.app.delete('/api/userDetails/:id', (req, res) => {
+        this.app.delete('/api/comments/:id', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
                     process.exit(1);
                 }
-                let userDetails = JSON.parse(data);
+                let comments = JSON.parse(data);
                 let idIndex = null;
-                let findCommentById = userDetails.filter(comment => {
+                let findCommentById = comments.filter(comment => {
                     if (comment.id == req.params.id) {
-                        idIndex = userDetails.indexOf(comment);
+                        idIndex = comments.indexOf(comment);
                         return comment;
                     }
                 });
 
                 if (idIndex >= 0) {
-                    userDetails.splice(idIndex, 1);
+                    comments.splice(idIndex, 1);
                 }
 
-                this.fs.writeFile(this.dataFile, JSON.stringify(userDetails, null, 4), function(err) {
+                this.fs.writeFile(this.dataFile, JSON.stringify(comments, null, 4), function(err) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    res.json(userDetails);
+                    res.json(comments);
                 });
             });
         });
@@ -164,10 +164,9 @@ class Server {
 
 export default Server;
 
-*/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-import express from 'express';
+/*import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -262,7 +261,7 @@ class Server {
                                                     console.log('Administrator notified');
                                                   }
                                                 });*/
-                    res.json(userDetails);
+/*   res.json(userDetails);
                 });
             });
         });
@@ -342,4 +341,4 @@ class Server {
     }
 }
 
-export default Server;
+export default Server;*/

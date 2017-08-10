@@ -36,9 +36,14 @@ img {
     width: 85px;
     border: none;
     border-radius: 4px;
-    margin: 80px 0px 50px 0px;
+    margin: 80px 0px 30px 0px;
 }
 
 .nav-item {
     margin: 0px 25px 0px 25px;
+}
+
+.card-img-bottom {
+    height: auto;
+    width: 100%;
 }
