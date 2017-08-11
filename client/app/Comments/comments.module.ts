@@ -17,8 +17,7 @@ import { CommentService } from './services/comment.service';
     BrowserModule,
     FormsModule,
      HttpModule,
-    JsonpModule,
-    
+    JsonpModule
   ],
   declarations: [
     CommentBoxComponent,

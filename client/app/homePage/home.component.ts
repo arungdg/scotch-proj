@@ -1,7 +1,6 @@
-/* * * ./app/comments/app.component.ts * * */
-// Imports
 import { Component } from '@angular/core';
-
+import { UserService } from '../services/user.service';
+import { UserDetails } from '../models/userDetails';
 
 
 @Component({
@@ -11,4 +10,19 @@ import { Component } from '@angular/core';
     styleUrls:['home.component.css']
 })
 export class HomeComponent {
+
+    userDetails: UserDetails[];
+    constructor(private userService: UserService) {
+        this.getUserDetails();
+    }
+
+    getUserDetails():void {
+        this.userService.getUserDetails()
+        .subscribe(
+            userDetails => this.userDetails = userDetails,
+            err => {
+                console.log(err);
+            }
+        );
+    }
  }

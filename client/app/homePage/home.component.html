@@ -74,23 +74,22 @@
         </nav>
     </div>
 </div>
-<h1>All posts view</h1>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" *ngFor="let userDetail of userDetails" style="margin:20px;">
         <div class="col align-self-center offset-md-2">
             <div class="card" style="width:80%;height:auto;">
                 <div class="card-block">
                     <div class="row">
                         <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
+                            <img [src]=userDetail.picUrl alt="Profile" style="width:40px; height:40px;">
                         </div>
                         <div class="col-11">
                             <div class="card-title">
                                 <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
+                                    <div class="col-3">
+                                        <span style="font-size:20px;">{{userDetail.name}}</span>
                                     </div>
-                                    <div class="col-9">
+                                    <div class="col-8">
                                         <div class="row justify-content-end">
                                             <span class="text-muted text-right" style="text-align:right;">
                                                 <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
@@ -100,272 +99,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">{{userDetail.text}}</p>
+                            <p class="card-text">{{userDetail.extendedText}}</p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">instagram.in/arun.gadag/beach.jpg</small></p>
-                        </div>
-                    </div>
-                </div>
-                <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">instagram.in/arun.gadag/beach.jpg</small></p>
-                        </div>
-                    </div>
-                </div>
-                <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">instagram.in/arun.gadag/beach.jpg</small></p>
-                        </div>
-                    </div>
-                </div>
-                <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br/>
-    <div class="row justify-content-center">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-2">
-                                        <span style="font-size:20px;">Card title</span>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br/>
+    </div>
 </div>
 <my-footer></my-footer>
