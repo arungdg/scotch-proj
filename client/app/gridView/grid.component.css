@@ -81,9 +81,17 @@ textarea {
     border-bottom: 4px solid #1DE9B6;
 }
 
-.card-img-top,
-.card-img-bottom,
-.card-img {
+.card {
+    margin: 10px 0px 10px 0px;
+}
+
+.card-footer {
+    background-color: transparent;
+    border: none;
+}
+
+.card-img-bottom {
     width: 100%;
     height: 30%;
+    border-radius: 0px;
 }

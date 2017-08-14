@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -87,7 +87,7 @@ class Server {
                                                     console.log('Administrator notified');
                                                   }
                                                 });*/
-                    res.json(comments);
+/*                    res.json(comments);
                 });
             });
         });
@@ -163,10 +163,10 @@ class Server {
 }
 
 export default Server;
-
+*/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*import express from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
@@ -233,9 +233,16 @@ class Server {
                     id: Date.now(),
                     name: req.body.name,
                     text: req.body.text,
-                    picUrl: req.body.picUrl,
+                    profilePic: req.body.profilePic,
+                    postPic: req.body.postPic,
                     videoUrl: req.body.videoUrl,
                     extendedText: req.body.extendedText,
+                    imageCaption: req.body.imageCaption,
+                    videoCaption: req.body.videoCaption,
+                    likedByMe: req.body.likedByMe,
+                    creationTime: Date.now(),
+                    updatedTime: req.body.updatedTime,
+                    updatedBy: req.body.updatedBy,
                     time: Date.now(),
                     likes: req.body.likes
 
@@ -261,7 +268,7 @@ class Server {
                                                     console.log('Administrator notified');
                                                   }
                                                 });*/
-/*   res.json(userDetails);
+                    res.json(userDetails);
                 });
             });
         });
@@ -281,10 +288,17 @@ class Server {
                 });
                 findUserDetailById[0].text = req.body.text;
                 findUserDetailById[0].name = req.body.name;
-                findUserDetailById[0].picUrl = req.body.picUrl;
+                findUserDetailById[0].profilePic = req.body.profilePic;
+                findUserDetailById[0].postPic = req.body.postPic;
                 findUserDetailById[0].videoUrl = req.body.videoUrl;
                 findUserDetailById[0].extendedText = req.body.extendedText;
-                findUserDetailById[0].time = req.body.time;
+                findUserDetailById[0].imageCaption = req.body.imageCaption;
+                findUserDetailById[0].videoCaption = req.body.videoCaption;
+                findUserDetailById[0].likedByMe = req.body.likedByMe;
+                findUserDetailById[0].creationTime = req.body.id;
+                findUserDetailById[0].updatedTime = Date.now();
+                findUserDetailById[0].updatedBy = req.body.updatedBy;
+                findUserDetailById[0].time = findUserDetailById[0].creationTime - findUserDetailById[0].updatedTime;
                 findUserDetailById[0].likes = req.body.likes;
 
                 userDetails.splice(idIndex, 1, findUserDetailById[0]);
@@ -341,4 +355,4 @@ class Server {
     }
 }
 
-export default Server;*/
+export default Server;

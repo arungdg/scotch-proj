@@ -81,7 +81,12 @@ textarea {
     border-bottom: 4px solid #1DE9B6;
 }
 
+.card {
+    margin: 10px 0px 5px 0px;
+}
+
 .card-img-bottom {
-    height: auto;
+    height: 45%;
     width: 100%;
+    border-radius: 0px;
 }

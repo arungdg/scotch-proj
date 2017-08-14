@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { SafePipeModule } from 'safe-pipe';
 
 import { CommentModule } from './Comments/comments.module';
 
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     CommentModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    SafePipeModule
   ],
   declarations: [
     AppComponent,

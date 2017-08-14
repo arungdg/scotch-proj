@@ -76,37 +76,105 @@
 </div>
 <div class="container">
     <div class="row justify-content-center" *ngFor="let userDetail of userDetails" style="margin:20px;">
-        <div class="col align-self-center offset-md-2">
-            <div class="card" style="width:80%;height:auto;">
-                <div class="card-block">
-                    <div class="row">
-                        <div class="col-1">
-                            <img [src]=userDetail.picUrl alt="Profile" style="width:40px; height:40px;">
-                        </div>
-                        <div class="col-11">
-                            <div class="card-title">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <span style="font-size:20px;">{{userDetail.name}}</span>
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="row justify-content-end">
-                                            <span class="text-muted text-right" style="text-align:right;">
+        <ng-container *ngIf="userDetail.text">
+            <div class="col align-self-center offset-md-2">
+                <div class="card" style="width:80%;height:auto;">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-1">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-11">
+                                <div class="card-title">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row justify-content-end">
+                                                <span class="text-muted text-right" style="text-align:right;">
                                                 <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                                                 <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
                                             </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <p class="card-text">{{userDetail.text}}</p>
+                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
-                            <p class="card-text">{{userDetail.text}}</p>
-                            <p class="card-text">{{userDetail.extendedText}}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="userDetail.postPic[0]">
+            <div class="col align-self-center offset-md-2">
+                <div class="card" style="width:80%;height:auto;">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-1">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-11">
+                                <div class="card-title">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row justify-content-end">
+                                                <span class="text-muted text-right" style="text-align:right;">
+                                                            <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                        </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="card-img-bottom" [src]=userDetail.postPic[0] alt="Card image cap">
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="userDetail.videoUrl[0]">
+            <div class="col align-self-center offset-md-2">
+                <div class="card" style="width:80%;height:auto;">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-1">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-11">
+                                <div class="card-title">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row justify-content-end">
+                                                <span class="text-muted text-right" style="text-align:right;">
+                                                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <iframe style="width:100%; height:30%;" [src]="userDetail.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </ng-container>
     </div>
 </div>
 <my-footer></my-footer>

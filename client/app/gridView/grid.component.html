@@ -74,77 +74,76 @@
         </nav>
     </div>
 </div>
-<h1>Grid View</h1>
+<br/>
 <div class="container">
-    <div class="card-columns">
-        <div class="card">
-            <img class="card-img-top img-fluid" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Card title that wraps to a new line</h4>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-        </div>
-        <div class="card p-3">
-            <blockquote class="card-block card-blockquote">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer>
-                    <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <img class="card-img-top img-fluid" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card card-inverse card-primary p-3 text-center">
-            <blockquote class="card-blockquote">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                <footer>
-                    <small>
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card text-center">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img class="card-img img-fluid" src="./assets/beach.jpg" alt="Card image">
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-        </div>
-        <div class="card p-3 text-right">
-            <blockquote class="card-blockquote">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer>
-                    <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="container">
+        <div class="card-columns">
+            <div class="card" *ngFor="let userDetail of userDetails">
+                <ng-container *ngIf="userDetail.text">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-2">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-10">
+                                <div class="card-title">
+                                    <span style="font-size:20px;">{{userDetail.name}}</span>
+                                </div>
+                                <p class="card-text" style="color:#424242;">{{userDetail.text}}</p>
+                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted text-right">
+                        <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="userDetail.postPic[0]">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-2">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-10">
+                                <div class="card-title">
+                                    <span style="font-size:20px;">{{userDetail.name}}</span>
+                                </div>
+                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                            </div>
+                        </div>
+                    </div>
+                    <img class="card-img-bottom" [src]=userDetail.postPic[0] alt="Card image cap">
+                    <div class="card-footer text-muted text-right">
+                        <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="userDetail.videoUrl[0]">
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-2">
+                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            </div>
+                            <div class="col-10">
+                                <div class="card-title">
+                                    <span style="font-size:20px;">{{userDetail.name}}</span>
+                                </div>
+                                <p class="card-text" style="color:#424242;">{{userDetail.videoCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userDetail.videoUrl[0]}}</small></p>
+                                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                            </div>
+                        </div>
+                    </div>
+                    <iframe style="width:100%; height:30%;" [src]="userDetail.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                    <div class="card-footer text-muted text-right">
+                        <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                        <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                    </div>
+                </ng-container>
             </div>
         </div>
     </div>
