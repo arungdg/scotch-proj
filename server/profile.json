@@ -1,13 +1,22 @@
-[{
+[
+    {
         "id": 9847698475945,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hi everyone!",
         "extendedText": "Climate change is an issue we all must be worried about.",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -19,12 +28,20 @@
         "id": 9847698475945,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "This is it!",
         "extendedText": "I am starting with the man in the mirror. I am asking him to change his ways.",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -36,12 +53,20 @@
         "id": 9847698475945,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hello!",
         "extendedText": "We must act before the world is unlivable.",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -53,12 +78,20 @@
         "id": 9847698475945,
         "name": "Kate Winslet",
         "profilePic": "./assets/kate.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hey people.",
         "extendedText": "I am travelling to Miami tonight. Is there anyone I can catch up tonight for gossip?",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -70,12 +103,20 @@
         "id": 9847698475945,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hi",
         "extendedText": "Lets not talk about me!",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -87,12 +128,20 @@
         "id": 9847698475945,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hey there.",
         "extendedText": "Having fun alone if you know what I mean...",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -104,12 +153,20 @@
         "id": 9847698475945,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "Hey Katie",
         "extendedText": "I knew it. I knew you couldn't be trusted.",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -121,12 +178,20 @@
         "id": 9847698475945,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": ["./assets/images/1.jpg"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/1.jpg"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["Beautiful sunset on a peaceful island I was this summer."],
-        "videoCaption": [""],
+        "imageCaption": [
+            "Beautiful sunset on a peaceful island I was this summer."
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -138,12 +203,20 @@
         "id": 9847698475945,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": ["./assets/images/2.png"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/2.png"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["View outside my room!"],
-        "videoCaption": [""],
+        "imageCaption": [
+            "View outside my room!"
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -155,12 +228,20 @@
         "id": 9847698475945,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": ["./assets/images/3.jpg"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/3.jpg"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["Hej Sweden"],
-        "videoCaption": [""],
+        "imageCaption": [
+            "Hej Sweden"
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -171,13 +252,21 @@
     {
         "id": 9847698475945,
         "name": "Kate Winslet",
-        "postPic": ["./assets/images/4.jpg"],
+        "postPic": [
+            "./assets/images/4.jpg"
+        ],
         "profilePic": "./assets/kate.jpg",
-        "videoUrl": [""],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["What a colorful sunny day!"],
-        "videoCaption": [""],
+        "imageCaption": [
+            "What a colorful sunny day!"
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -189,12 +278,20 @@
         "id": 9847698475945,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": ["./assets/images/5.jpg"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/5.jpg"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["On the rocks!"],
-        "videoCaption": [""],
+        "imageCaption": [
+            "On the rocks!"
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -206,12 +303,20 @@
         "id": 9847698475945,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": ["./assets/images/6.jpg"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/6.jpg"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["I know we are proud of her."],
-        "videoCaption": [""],
+        "imageCaption": [
+            "I know we are proud of her."
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -223,12 +328,20 @@
         "id": 9847698475945,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": ["./assets/images/7.jpg"],
-        "videoUrl": [""],
+        "postPic": [
+            "./assets/images/7.jpg"
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": ["That's how we roll"],
-        "videoCaption": [""],
+        "imageCaption": [
+            "That's how we roll"
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -240,12 +353,20 @@
         "id": 9847698475945,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/xpyrefzvTpI"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/xpyrefzvTpI"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["Efforts answered!!!"],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "Efforts answered!!!"
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -257,12 +378,20 @@
         "id": 9847698475945,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/sOnqjkJTMaA"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/sOnqjkJTMaA"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["The most sold album of my career."],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "The most sold album of my career."
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -274,12 +403,20 @@
         "id": 9847698475945,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/vHG-CMiQuSI"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/vHG-CMiQuSI"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["FIRST THEY KILLED MY FATHER Official Trailer (2017)"],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "FIRST THEY KILLED MY FATHER Official Trailer (2017)"
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -291,12 +428,20 @@
         "id": 9847698475945,
         "name": "Kate Winslet",
         "profilePic": "./assets/kate.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/77nNnzCItWY"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/77nNnzCItWY"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["Yes, I'm 40 ;)"],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "Yes, I'm 40 ;)"
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -308,12 +453,20 @@
         "id": 9847698475945,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [""],
-        "videoUrl": [""],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            ""
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": [""],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            ""
+        ],
         "likedByMe": true,
         "creationTime": "",
         "updatedTime": "",
@@ -325,12 +478,20 @@
         "id": 9847698475945,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/J5sk8XziXVc"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/J5sk8XziXVc"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["I taught Ellen how to tap dance."],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "I taught Ellen how to tap dance."
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
@@ -342,17 +503,93 @@
         "id": 9847698475945,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": [""],
-        "videoUrl": ["https://www.youtube.com/embed/EXeTwQWrcwY"],
+        "postPic": [
+            ""
+        ],
+        "videoUrl": [
+            "https://www.youtube.com/embed/EXeTwQWrcwY"
+        ],
         "text": "",
         "extendedText": "",
-        "imageCaption": [""],
-        "videoCaption": ["Check out my latest movie trailer you have all been waiting for."],
+        "imageCaption": [
+            ""
+        ],
+        "videoCaption": [
+            "Check out my latest movie trailer you have all been waiting for."
+        ],
         "likedByMe": false,
         "creationTime": "",
         "updatedTime": "",
         "updatedBy": "",
         "time": "",
         "likes": 5
+    },
+    {
+        "id": 1502878475037,
+        "name": "Hari",
+        "text": "Hello",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "extendedText": "Hi Arun",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": true,
+        "creationTime": 1502878475038,
+        "updatedTime": "2017-08-16T10:14:04.663Z",
+        "updatedBy": "",
+        "time": 1502878475038,
+        "likes": null
+    },
+    {
+        "id": 1502878814919,
+        "name": "Ravi",
+        "text": "Hello",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "extendedText": "Hi Ravi",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": true,
+        "creationTime": 1502878814919,
+        "updatedTime": "2017-08-16T10:18:26.604Z",
+        "updatedBy": "",
+        "time": 1502878814919,
+        "likes": null
+    },
+    {
+        "id": 1502887490913,
+        "name": "Justine Timberlake",
+        "text": "Hello",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "extendedText": "What goes around comes back around.",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1502887490913,
+        "updatedTime": "2017-08-16T12:43:36.017Z",
+        "updatedBy": "",
+        "time": 1502887490913,
+        "likes": null
+    },
+    {
+        "id": 1502887759912,
+        "name": "lhlihl",
+        "text": "Hello",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "extendedText": "hello",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1502887759912,
+        "updatedTime": "2017-08-16T12:49:03.974Z",
+        "updatedBy": "",
+        "time": 1502887759912,
+        "likes": null
     }
 ]

@@ -1,6 +1,6 @@
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { SafePipeModule } from 'safe-pipe';
@@ -39,6 +39,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
      HttpModule,
     JsonpModule,
     CommentModule,
