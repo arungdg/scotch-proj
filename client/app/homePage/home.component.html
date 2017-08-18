@@ -3,7 +3,7 @@
     <div class="row align-items-center justify-content-center">
         <!-- Button trigger modal -->
         <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
-            What's on your mind?
+            <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
         </button>
         <!-- Modal -->
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
@@ -17,17 +17,12 @@
                     </div>
                     <div class="modal-body">
                         <form novalidate [formGroup]="newUserDetails">
-                            <div class="col-10">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <input style="border:none;" type="text" class="form-control" formControlName="name" placeholder="Full name">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-10">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <textarea class="form-control" formControlName="extendedText" placeholder="What's on your mind?"></textarea>
+                            <div class="row justify-content-center">
+                                <div class="col-11">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea class="form-control" formControlName="extendedText" placeholder="What's on your mind?"></textarea>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +52,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarLists">
+            <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
                         <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
@@ -69,7 +64,7 @@
                         <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/videos' routerLinkActive='active'>VIDEOS</a>
                     </li>
                 </ul>
-                <ul class=" navbar-nav my-2 my-lg-0">
+                <ul class="navbar-nav mr-auto" style="margin-left:30%;">
                     <li class="nav-item mr-sm-2">
                         <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/listView' routerLinkActive='active'>
                             <i class="fa fa-bars" aria-hidden="true"></i>
@@ -87,7 +82,7 @@
 </div>
 <div class="container">
     <div class="row justify-content-center" *ngFor="let userDetail of userDetails" style="margin:20px;">
-        <ng-container *ngIf="userDetail.text">
+        <ng-container *ngIf="userDetail.extendedText">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:80%;height:auto;">
                     <div class="card-block">

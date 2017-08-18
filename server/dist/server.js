@@ -232,6 +232,43 @@ var Server = function () {
                 next();
             });
         }
+        /*
+            sortBy = (function() {
+                  const _defaults = {
+                    parser: (x) => x,
+                    desc: false
+                };
+                  const isObject = (o) => o !== null && typeof o === "object";
+                const isDefined = (v) => typeof v !== "undefined";
+                  //gets the item to be sorted
+                function getItem(x) {
+                    const isProp = isObject(x) && isDefined(x[this.prop]);
+                    return this.parser(isProp ? x[this.prop] : x);
+                }
+                  /**
+                 * Sorts an array of elements
+                 * @param  {Array} array: the collection to sort
+                 * @param  {Object} options: 
+                 *         options with the sort rules. It have the properties:
+                 *         - {String}   prop: property name (if it is an Array of objects)
+                 *         - {Boolean}  desc: determines whether the sort is descending
+                 *         - {Function} parser: function to parse the items to expected type
+                 * @return {Array}
+                 */
+        /*
+                return function(array, options) {
+                    if (!(array instanceof Array) || !array.length)
+                        return [];
+                    const opt = Object.assign({}, _defaults, options);
+                    opt.desc = opt.desc ? -1 : 1;
+                    return array.sort(function(a, b) {
+                        a = getItem.call(opt, a);
+                        b = getItem.call(opt, b);
+                        return opt.desc * (a < b ? -1 : +(a > b));
+                    });
+                };
+              }());*/
+
     }, {
         key: 'configureRoutes',
         value: function configureRoutes() {
@@ -248,19 +285,22 @@ var Server = function () {
                         console.error(err);
                         process.exit(1);
                     }
+                    //this.sortBy(data, { prop: "id" });
+                    //var descending = data.sort((a, b) => Number(b.id) - Number(a.id));
+                    //console.log("descending", descending);
                     res.json(JSON.parse(data));
                 });
             });
 
-            this.app.post('/api/userDetails', function (req, res) {
+            this.app.post('/api/userPosts', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    var userDetails = JSON.parse(data);
+                    var userPosts = JSON.parse(data);
 
-                    var newUserDetails = {
+                    var newUserPosts = {
                         id: Date.now(),
                         name: req.body.name,
                         text: req.body.text,
@@ -279,8 +319,8 @@ var Server = function () {
 
                     };
 
-                    userDetails.push(newUserDetails);
-                    _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
+                    userPosts.push(newUserPosts);
+                    _this.fs.writeFile(_this.dataFile, JSON.stringify(userPosts, null, 4), function (err) {
                         if (err) {
                             console.error(err);
                             process.exit(1);
@@ -299,7 +339,7 @@ var Server = function () {
                                                         console.log('Administrator notified');
                                                       }
                                                     });*/
-                        res.json(userDetails);
+                        res.json(userPosts);
                     });
                 });
             });

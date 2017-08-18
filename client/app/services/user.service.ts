@@ -15,6 +15,7 @@ export class UserService {
      constructor (private http: Http) {}
      // private instance variable to hold base url
      private url = 'http://localhost:3000/api/userDetails';
+     private postUrl = 'http://localhost:3000/api/userPosts';
      
      // Fetch all existing comments
      getUserDetails() : Observable<UserDetails[]>{
@@ -33,7 +34,7 @@ export class UserService {
         let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
         let options = new RequestOptions({ headers: headers }); // Create a request option
 
-        return this.http.post(this.url, body, options) // ...using post request
+        return this.http.post(this.postUrl, body, options) // ...using post request
                          .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
                          .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }   

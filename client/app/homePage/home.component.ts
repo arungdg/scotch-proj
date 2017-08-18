@@ -24,11 +24,11 @@ export class HomeComponent implements OnInit, OnChanges {
         this.getUserDetails();
         this.newUserDetails = this.fb.group({
             id: new Date(),
-            name: [''],
+            name: ['Arun Gadag'],
             profilePic: ['./assets/arun.jpg'],
             postPic: [''],
             videoUrl: [''],
-            text: ['Hello'],
+            text: [''],
             extendedText: [''],
             imageCaption: [''],
             videoCaption: [''],
