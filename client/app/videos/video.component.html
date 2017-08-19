@@ -3,39 +3,45 @@
     <div class="row align-items-center justify-content-center">
         <!-- Button trigger modal -->
         <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
-            Open modal Window
-        </button>
+                <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
+            </button>
         <!-- Modal -->
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header" style="border:none;">
                         <h5 class="modal-title" id="modalTitle">Create new message</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                     </div>
                     <div class="modal-body">
-                        <div class="row justify-content-center">
-                            <textarea autofocus style="height:100px;"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="row">
-                            <div class="col">
-                                <button type="button" class="btn add-media">
-                                    <i class="fa fa-camera" aria-hidden="true"></i> Add Photo
-                                </button>
+                        <form novalidate [formGroup]="newUserDetails">
+                            <div class="row justify-content-center">
+                                <div class="col-11">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea class="form-control" formControlName="extendedText" placeholder="What's on your mind?"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                                <button type="button" class="btn add-media">
-                                    <i class="fa fa-video-camera" aria-hidden="true"></i> Add Video
-                                </button>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media">
+                                        <i class="fa fa-camera" aria-hidden="true"></i> Add Photo
+                                    </button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media">
+                                        <i class="fa fa-video-camera" aria-hidden="true"></i> Add Video
+                                    </button>
+                                </div>
+                                <div class="col">
+                                    <button type="submit" class="btn post" (click)="onSubmit(newUserDetails);" data-dismiss="modal">Post</button>
+                                </div>
                             </div>
-                            <div class="col">
-                                <button type="button" class="btn post">Post</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -46,7 +52,7 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarLists">
+            <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
@@ -62,155 +68,32 @@
         </nav>
     </div>
 </div>
-<h1>This is video component</h1>
+<br/>
 <div class="container">
     <div class="card-columns">
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
+        <div class="card" *ngFor="let userDetail of userDetails">
+            <ng-container *ngIf="userDetail.videoUrl[0]">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-2">
+                            <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
                         </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <div class="col-10">
+                            <div class="card-title">
+                                <span style="font-size:20px;">{{userDetail.name}}</span>
+                            </div>
+                            <p class="card-text" style="color:#424242;">{{userDetail.videoCaption[0]}}</p>
+                            <p class="card-text"><small class="text-muted">{{userDetail.videoUrl[0]}}</small></p>
+                            <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
+                <iframe style="width:100%; height:30%;" [src]="userDetail.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                <div class="card-footer text-muted text-right">
+                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
                 </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row">
-                    <div class="col-2">
-                        <img src="./assets/beach.jpg" alt="Profile" style="width:40px; height:40px;">
-                    </div>
-                    <div class="col-10">
-                        <div class="card-title">
-                            <span style="font-size:20px;">Card title</span>
-                        </div>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                </div>
-            </div>
-            <img class="card-img-bottom" src="./assets/beach.jpg" alt="Card image cap">
-            <div class="card-footer text-muted text-right">
-                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

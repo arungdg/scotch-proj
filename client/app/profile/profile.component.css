@@ -44,6 +44,7 @@ img {
 }
 
 .card-img-bottom {
-    height: auto;
+    height: 40%;
     width: 100%;
+    border-radius: 0px;
 }

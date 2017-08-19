@@ -28,6 +28,7 @@ img {
 
 textarea {
     width: 80%;
+    height: 100px;
     border: none;
     resize: none;
 }
@@ -50,6 +51,8 @@ textarea {
     background-color: #00BFA5;
     color: #F5F5F5;
     font-size: 14px;
+    float: right;
+    margin-right: 15px;
 }
 
 .modal-title {
@@ -64,12 +67,17 @@ textarea {
 }
 
 .btn-modal {
-    border: none;
+    /*border: none;
     width: 40%;
     height: 150px;
     margin: 100px 0px 100px 0px;
     background-color: rgba(0, 191, 165, 0.5);
-    color: #F5F5F5;
+    color: #F5F5F5;*/
+    padding: 0px;
+    margin: 100px 0px 100px 0px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .dropdown-toggle {
@@ -81,7 +89,12 @@ textarea {
     border-bottom: 4px solid #1DE9B6;
 }
 
+.card {
+    margin: 10px 0px 5px 0px;
+}
+
 .card-img-bottom {
-    height: auto;
+    height: 45%;
     width: 100%;
+    border-radius: 0px;
 }

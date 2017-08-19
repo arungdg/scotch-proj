@@ -1,13 +1,14 @@
-import { NgModule }       from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
-import { RouterModule, Routes }   from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { SafePipeModule } from 'safe-pipe';
 
 import { CommentModule } from './Comments/comments.module';
 
-import { AppComponent }         from './app.component';
-import { EmitterService }          from './emitter.service';
+import { AppComponent } from './app.component';
+import { EmitterService } from './emitter.service';
 import { HomeComponent } from './homePage/home.component';
 import { PhotosComponent } from './photos/photos.component';
 import { VideoComponent } from './videos/video.component';
@@ -19,6 +20,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from "./profile/profile.component";
 import { FollowingComponent } from "./following/following.component";
 import { FollowersComponent } from "./followers/followers.component";
+
+import { UserService } from './services/user.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,12 +39,14 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
      HttpModule,
     JsonpModule,
     CommentModule,
     RouterModule.forRoot(
       appRoutes
-    )
+    ),
+    SafePipeModule
   ],
   declarations: [
     AppComponent,
@@ -58,6 +63,7 @@ const appRoutes: Routes = [
     FollowersComponent
   ],
   providers: [
+    UserService,
     EmitterService
   ],
   bootstrap: [ AppComponent ]
