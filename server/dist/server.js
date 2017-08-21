@@ -194,8 +194,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// import multer from 'multer';
-
+// Load the full build.
+var _ = require('lodash');
+// Load the core build.
+var _ = require('lodash/core');
+// Load the FP build for immutable auto-curried iteratee-first data-last methods.
+var fp = require('lodash/fp');
 
 var Server = function () {
     function Server() {
@@ -232,43 +236,6 @@ var Server = function () {
                 next();
             });
         }
-        /*
-            sortBy = (function() {
-                  const _defaults = {
-                    parser: (x) => x,
-                    desc: false
-                };
-                  const isObject = (o) => o !== null && typeof o === "object";
-                const isDefined = (v) => typeof v !== "undefined";
-                  //gets the item to be sorted
-                function getItem(x) {
-                    const isProp = isObject(x) && isDefined(x[this.prop]);
-                    return this.parser(isProp ? x[this.prop] : x);
-                }
-                  /**
-                 * Sorts an array of elements
-                 * @param  {Array} array: the collection to sort
-                 * @param  {Object} options: 
-                 *         options with the sort rules. It have the properties:
-                 *         - {String}   prop: property name (if it is an Array of objects)
-                 *         - {Boolean}  desc: determines whether the sort is descending
-                 *         - {Function} parser: function to parse the items to expected type
-                 * @return {Array}
-                 */
-        /*
-                return function(array, options) {
-                    if (!(array instanceof Array) || !array.length)
-                        return [];
-                    const opt = Object.assign({}, _defaults, options);
-                    opt.desc = opt.desc ? -1 : 1;
-                    return array.sort(function(a, b) {
-                        a = getItem.call(opt, a);
-                        b = getItem.call(opt, b);
-                        return opt.desc * (a < b ? -1 : +(a > b));
-                    });
-                };
-              }());*/
-
     }, {
         key: 'configureRoutes',
         value: function configureRoutes() {
@@ -279,16 +246,18 @@ var Server = function () {
             //     console.log(req.file);
             //     res.json({image: 'http://localhost:1337/'+req.file.path})
             // });
-            this.app.get('/api/userDetails', function (req, res) {
+            this.app.get('/api/userPosts', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
                         process.exit(1);
                     }
-                    //this.sortBy(data, { prop: "id" });
-                    //var descending = data.sort((a, b) => Number(b.id) - Number(a.id));
-                    //console.log("descending", descending);
-                    res.json(JSON.parse(data));
+                    var unsortedData = JSON.parse(data);
+                    //console.log("Unsorted: " + JSON.stringify(unsortedData) + "\n");
+                    sortedData = _.sortBy(unsortedData, 'id');
+                    //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
+                    var sortedData = JSON.stringify(sortedData.reverse());
+                    res.json(JSON.parse(sortedData));
                 });
             });
 
@@ -299,7 +268,6 @@ var Server = function () {
                         process.exit(1);
                     }
                     var userPosts = JSON.parse(data);
-
                     var newUserPosts = {
                         id: Date.now(),
                         name: req.body.name,
@@ -307,19 +275,16 @@ var Server = function () {
                         profilePic: req.body.profilePic,
                         postPic: req.body.postPic,
                         videoUrl: req.body.videoUrl,
-                        extendedText: req.body.extendedText,
                         imageCaption: req.body.imageCaption,
                         videoCaption: req.body.videoCaption,
                         likedByMe: req.body.likedByMe,
                         creationTime: Date.now(),
-                        updatedTime: req.body.updatedTime,
-                        updatedBy: req.body.updatedBy,
-                        time: Date.now(),
                         likes: req.body.likes
 
                     };
 
                     userPosts.push(newUserPosts);
+
                     _this.fs.writeFile(_this.dataFile, JSON.stringify(userPosts, null, 4), function (err) {
                         if (err) {
                             console.error(err);
@@ -339,11 +304,17 @@ var Server = function () {
                                                         console.log('Administrator notified');
                                                       }
                                                     });*/
-                        res.json(userPosts);
+                        var unsortedData = JSON.parse(data);
+                        //console.log("Unsorted: " + JSON.stringify(unsortedData) + "\n");
+                        sortedData = _.sortBy(unsortedData, 'id');
+                        //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
+                        var sortedData = JSON.stringify(sortedData.reverse());
+                        res.json(JSON.parse(sortedData));
+                        //res.json(userPosts);
                     });
                 });
             });
-            this.app.put('/api/userDetails/:id', function (req, res) {
+            this.app.put('/api/userPosts/:id', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);
@@ -362,14 +333,10 @@ var Server = function () {
                     findUserDetailById[0].profilePic = req.body.profilePic;
                     findUserDetailById[0].postPic = req.body.postPic;
                     findUserDetailById[0].videoUrl = req.body.videoUrl;
-                    findUserDetailById[0].extendedText = req.body.extendedText;
                     findUserDetailById[0].imageCaption = req.body.imageCaption;
                     findUserDetailById[0].videoCaption = req.body.videoCaption;
                     findUserDetailById[0].likedByMe = req.body.likedByMe;
                     findUserDetailById[0].creationTime = req.body.id;
-                    findUserDetailById[0].updatedTime = Date.now();
-                    findUserDetailById[0].updatedBy = req.body.updatedBy;
-                    findUserDetailById[0].time = findUserDetailById[0].creationTime - findUserDetailById[0].updatedTime;
                     findUserDetailById[0].likes = req.body.likes;
 
                     userDetails.splice(idIndex, 1, findUserDetailById[0]);
@@ -382,7 +349,7 @@ var Server = function () {
                     });
                 });
             });
-            this.app.delete('/api/userDetails/:id', function (req, res) {
+            this.app.delete('/api/userPosts/:id', function (req, res) {
                 _this.fs.readFile(_this.dataFile, function (err, data) {
                     if (err) {
                         console.error(err);

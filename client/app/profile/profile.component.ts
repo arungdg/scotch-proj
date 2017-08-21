@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UserDetails } from "../models/userDetails";
+import { UserPosts } from "../models/userPosts";
 import { UserService } from "../services/user.service";
 
 @Component({
@@ -10,7 +10,7 @@ import { UserService } from "../services/user.service";
 })
 
 export class ProfileComponent {
-    userDetails: UserDetails[];
+    userPosts: UserPosts[];
     constructor(private userService: UserService) {
         this.getUserDetails();
     }
@@ -18,7 +18,7 @@ export class ProfileComponent {
     getUserDetails():void {
         this.userService.getUserDetails()
         .subscribe(
-            userDetails => this.userDetails = userDetails,
+            userPosts => this.userPosts = userPosts,
             err => {
                 console.log(err);
             }

@@ -170,8 +170,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
-// import multer from 'multer';
-
+// Load the full build.
+var _ = require('lodash');
+// Load the core build.
+var _ = require('lodash/core');
+// Load the FP build for immutable auto-curried iteratee-first data-last methods.
+var fp = require('lodash/fp');
 
 class Server {
     constructor() {
@@ -191,60 +195,19 @@ class Server {
     }
 
     configureCORS() {
-            // Additional middleware which will set headers that we need on each request.
-            this.app.use((req, res, next) => {
-                // Set permissive CORS header - this allows this server to be used only as
-                // an API server in conjunction with something like webpack-dev-server.
-                res.setHeader('Access-Control-Allow-Origin', '*');
-                res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
-                res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+        // Additional middleware which will set headers that we need on each request.
+        this.app.use((req, res, next) => {
+            // Set permissive CORS header - this allows this server to be used only as
+            // an API server in conjunction with something like webpack-dev-server.
+            res.setHeader('Access-Control-Allow-Origin', '*');
+            res.setHeader('Access-Control-Allow-Methods', 'POST, PUT, DELETE, GET');
+            res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
 
-                // Disable caching so we'll always get the latest userDetails.
-                res.setHeader('Cache-Control', 'no-cache');
-                next();
-            });
-        }
-        /*
-            sortBy = (function() {
-
-                const _defaults = {
-                    parser: (x) => x,
-                    desc: false
-                };
-
-                const isObject = (o) => o !== null && typeof o === "object";
-                const isDefined = (v) => typeof v !== "undefined";
-
-                //gets the item to be sorted
-                function getItem(x) {
-                    const isProp = isObject(x) && isDefined(x[this.prop]);
-                    return this.parser(isProp ? x[this.prop] : x);
-                }
-
-                /**
-                 * Sorts an array of elements
-                 * @param  {Array} array: the collection to sort
-                 * @param  {Object} options: 
-                 *         options with the sort rules. It have the properties:
-                 *         - {String}   prop: property name (if it is an Array of objects)
-                 *         - {Boolean}  desc: determines whether the sort is descending
-                 *         - {Function} parser: function to parse the items to expected type
-                 * @return {Array}
-                 */
-        /*
-                return function(array, options) {
-                    if (!(array instanceof Array) || !array.length)
-                        return [];
-                    const opt = Object.assign({}, _defaults, options);
-                    opt.desc = opt.desc ? -1 : 1;
-                    return array.sort(function(a, b) {
-                        a = getItem.call(opt, a);
-                        b = getItem.call(opt, b);
-                        return opt.desc * (a < b ? -1 : +(a > b));
-                    });
-                };
-
-            }());*/
+            // Disable caching so we'll always get the latest userDetails.
+            res.setHeader('Cache-Control', 'no-cache');
+            next();
+        });
+    }
 
     configureRoutes() {
         // Ignore this
@@ -252,16 +215,18 @@ class Server {
         //     console.log(req.file);
         //     res.json({image: 'http://localhost:1337/'+req.file.path})
         // });
-        this.app.get('/api/userDetails', (req, res) => {
+        this.app.get('/api/userPosts', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
                     process.exit(1);
                 }
-                //this.sortBy(data, { prop: "id" });
-                //var descending = data.sort((a, b) => Number(b.id) - Number(a.id));
-                //console.log("descending", descending);
-                res.json(JSON.parse(data));
+                var unsortedData = JSON.parse(data);
+                //console.log("Unsorted: " + JSON.stringify(unsortedData) + "\n");
+                sortedData = _.sortBy(unsortedData, 'id');
+                //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
+                var sortedData = JSON.stringify(sortedData.reverse());
+                res.json(JSON.parse(sortedData));
             });
         });
 
@@ -272,7 +237,6 @@ class Server {
                     process.exit(1);
                 }
                 var userPosts = JSON.parse(data);
-
                 var newUserPosts = {
                     id: Date.now(),
                     name: req.body.name,
@@ -280,19 +244,16 @@ class Server {
                     profilePic: req.body.profilePic,
                     postPic: req.body.postPic,
                     videoUrl: req.body.videoUrl,
-                    extendedText: req.body.extendedText,
                     imageCaption: req.body.imageCaption,
                     videoCaption: req.body.videoCaption,
                     likedByMe: req.body.likedByMe,
                     creationTime: Date.now(),
-                    updatedTime: req.body.updatedTime,
-                    updatedBy: req.body.updatedBy,
-                    time: Date.now(),
                     likes: req.body.likes
 
                 };
 
                 userPosts.push(newUserPosts);
+
                 this.fs.writeFile(this.dataFile, JSON.stringify(userPosts, null, 4), (err) => {
                     if (err) {
                         console.error(err);
@@ -316,7 +277,7 @@ class Server {
                 });
             });
         });
-        this.app.put('/api/userDetails/:id', (req, res) => {
+        this.app.put('/api/userPosts/:id', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);
@@ -335,14 +296,10 @@ class Server {
                 findUserDetailById[0].profilePic = req.body.profilePic;
                 findUserDetailById[0].postPic = req.body.postPic;
                 findUserDetailById[0].videoUrl = req.body.videoUrl;
-                findUserDetailById[0].extendedText = req.body.extendedText;
                 findUserDetailById[0].imageCaption = req.body.imageCaption;
                 findUserDetailById[0].videoCaption = req.body.videoCaption;
                 findUserDetailById[0].likedByMe = req.body.likedByMe;
                 findUserDetailById[0].creationTime = req.body.id;
-                findUserDetailById[0].updatedTime = Date.now();
-                findUserDetailById[0].updatedBy = req.body.updatedBy;
-                findUserDetailById[0].time = findUserDetailById[0].creationTime - findUserDetailById[0].updatedTime;
                 findUserDetailById[0].likes = req.body.likes;
 
                 userDetails.splice(idIndex, 1, findUserDetailById[0]);
@@ -355,7 +312,7 @@ class Server {
                 });
             });
         });
-        this.app.delete('/api/userDetails/:id', (req, res) => {
+        this.app.delete('/api/userPosts/:id', (req, res) => {
             this.fs.readFile(this.dataFile, (err, data) => {
                 if (err) {
                     console.error(err);

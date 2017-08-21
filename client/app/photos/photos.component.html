@@ -16,12 +16,12 @@
                             </button>
                     </div>
                     <div class="modal-body">
-                        <form novalidate [formGroup]="newUserDetails">
+                        <form novalidate [formGroup]="newUserPosts">
                             <div class="row justify-content-center">
                                 <div class="col-11">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <textarea class="form-control" formControlName="extendedText" placeholder="What's on your mind?"></textarea>
+                                            <textarea class="form-control" formControlName="text" placeholder="What's on your mind?"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     </button>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn post" (click)="onSubmit(newUserDetails);" data-dismiss="modal">Post</button>
+                                    <button type="submit" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
                                 </div>
                             </div>
                         </form>
@@ -71,29 +71,35 @@
 <br/>
 <div class="container">
     <div class="card-columns">
-        <div class="card" *ngFor="let userDetail of userDetails">
-            <ng-container *ngIf="userDetail.postPic[0]">
+        <div class="card" *ngFor="let userPost of userPosts">
+            <ng-container *ngIf="userPost.postPic[0]">
                 <div class="card-block">
                     <div class="row">
                         <div class="col-2">
-                            <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                            <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
                         </div>
                         <div class="col-10">
                             <div class="card-title">
-                                <span style="font-size:20px;">{{userDetail.name}}</span>
+                                <span style="font-size:20px;">{{userPost.name}}</span>
                             </div>
-                            <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
-                            <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                            <p class="card-text" style="color:#424242;">{{userPost.imageCaption[0]}}</p>
+                            <p class="card-text"><small class="text-muted">{{userPost.postPic[0]}}</small></p>
                             <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
                         </div>
                     </div>
                 </div>
-                <img class="card-img-bottom" [src]=userDetail.postPic[0] alt="Card image cap">
+                <img class="card-img-bottom" [src]=userPost.postPic[0] alt="Card image cap">
                 <div class="card-footer text-muted text-right">
                     <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                 </div>
             </ng-container>
+            <!--ng-container *ngIf="!userPost.postPic[0]">
+                <div style="display:none;"></div>
+            </ng-container>
+            <ng-container *ngIf="userPost.videoUrl[0]">
+                <div style="display:none;"></div>
+            </ng-container-->
         </div>
     </div>
 </div>

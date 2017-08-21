@@ -1,4 +1,4 @@
-export class UserDetails {
+export class UserPosts {
     constructor(
         public id: any,
         public name: string,
@@ -6,14 +6,10 @@ export class UserDetails {
         public postPic: string,
         public videoUrl: string,
         public text:string,
-        public extendedText: string,
         public imageCaption:string,
         public videoCaption:string,
         public likedByMe: boolean,
         public creationTime: any,
-        public updatedTime: any,
-        public updatedBy: string,
-        public time: any,
         public likes: number
         ){}
 }

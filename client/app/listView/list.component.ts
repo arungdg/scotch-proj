@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { UserDetails } from '../models/userDetails';
+import { UserPosts } from '../models/userPosts';
 
 @Component({
     moduleId: module.id,
@@ -11,8 +11,8 @@ import { UserDetails } from '../models/userDetails';
 })
 
 export class ListComponent implements OnChanges, OnInit {
-    userDetails: UserDetails[];
-    newUserDetails: FormGroup;
+    userPosts: UserPosts[];
+    newUserPosts: FormGroup;
     constructor(
         private userService: UserService,
         private fb: FormBuilder
@@ -21,44 +21,40 @@ export class ListComponent implements OnChanges, OnInit {
 
     ngOnInit() {
         this.getUserDetails();
-        this.newUserDetails = this.fb.group({
+        this.newUserPosts = this.fb.group({
             id: new Date(),
-            name: [''],
+            name: ['Arun Gadag'],
             profilePic: ['./assets/arun.jpg'],
             postPic: [''],
             videoUrl: [''],
-            text: ['Hello'],
-            extendedText: [''],
+            text: [''],
             imageCaption: [''],
             videoCaption: [''],
             likedByMe:  [false],
             creationTime:  new Date(),
-            updatedTime:  new Date(),
-            updatedBy:  [''],
-            time:  new Date(),
-            likes: [null]
+            likes: 8
         })
     }
 
     getUserDetails():void {
         this.userService.getUserDetails()
         .subscribe(
-            userDetails => this.userDetails = userDetails,
+            userPosts => this.userPosts = userPosts,
             err => {
                 console.log(err);
             }
         );
     }
 
-    onSubmit({ value, valid }: { value: UserDetails, valid: boolean }) {
+    onSubmit({ value, valid }: { value: UserPosts, valid: boolean }) {
         //console.log(JSON.stringify(value));
-        this.addNewUser(value);
+        this.addNewPost(value);
     }
 
-    addNewUser(user: UserDetails):void {
-        this.userService.addNewUser(user)
+    addNewPost(user: UserPosts):void {
+        this.userService.addNewPost(user)
         .subscribe(
-            userDetails => this.userDetails = userDetails,
+            userPosts => this.userPosts = userPosts,
             err => {
                 console.log(err);
             }

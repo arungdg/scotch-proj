@@ -16,12 +16,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form novalidate [formGroup]="newUserDetails">
+                        <form novalidate [formGroup]="newUserPosts">
                             <div class="row justify-content-center">
                                 <div class="col-11">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <textarea class="form-control" formControlName="extendedText" placeholder="What's on your mind?"></textarea>
+                                            <textarea class="form-control" formControlName="text" placeholder="What's on your mind?"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                 </button>
                                 </div>
                                 <div class="col">
-                                    <button type="submit" class="btn post" (click)="onSubmit(newUserDetails);" data-dismiss="modal">Post</button>
+                                    <button type="submit" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
                                 </div>
                             </div>
                         </form>
@@ -81,102 +81,101 @@
     </div>
 </div>
 <div class="container">
-    <div class="row justify-content-center" *ngFor="let userDetail of userDetails" style="margin:20px;">
-        <ng-container *ngIf="userDetail.extendedText">
+    <div class="row justify-content-center" *ngFor="let userPost of userPosts" style="margin:20px;">
+        <ng-container *ngIf="userPost.text">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:80%;height:auto;">
                     <div class="card-block">
                         <div class="row">
                             <div class="col-1">
-                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                                <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
                             </div>
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
                                         <div class="col-3">
-                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                            <span style="font-size:20px;">{{userPost.name}}</span>
                                         </div>
                                         <div class="col-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
                                                 <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                             </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text">{{userDetail.text}}</p>
-                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <p class="card-text">{{userPost.text}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="userDetail.postPic[0]">
+        <ng-container *ngIf="userPost.postPic[0]">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:80%;height:auto;">
                     <div class="card-block">
                         <div class="row">
                             <div class="col-1">
-                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                                <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
                             </div>
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
                                         <div class="col-3">
-                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                            <span style="font-size:20px;">{{userPost.name}}</span>
                                         </div>
                                         <div class="col-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
                                                             <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                                         </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
-                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                                <p class="card-text" style="color:#424242;">{{userPost.imageCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userPost.postPic[0]}}</small></p>
                             </div>
                         </div>
                     </div>
-                    <img class="card-img-bottom" [src]=userDetail.postPic[0] alt="Card image cap">
+                    <img class="card-img-bottom" [src]=userPost.postPic[0] alt="Card image cap">
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="userDetail.videoUrl[0]">
+        <ng-container *ngIf="userPost.videoUrl[0]">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:80%;height:auto;">
                     <div class="card-block">
                         <div class="row">
                             <div class="col-1">
-                                <img [src]=userDetail.profilePic alt="Profile" style="width:40px; height:40px;">
+                                <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
                             </div>
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
                                         <div class="col-3">
-                                            <span style="font-size:20px;">{{userDetail.name}}</span>
+                                            <span style="font-size:20px;">{{userPost.name}}</span>
                                         </div>
                                         <div class="col-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
                                                     <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                                 </span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
-                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                                <p class="card-text" style="color:#424242;">{{userPost.imageCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userPost.postPic[0]}}</small></p>
                             </div>
                         </div>
                     </div>
-                    <iframe style="width:100%; height:30%;" [src]="userDetail.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                    <iframe style="width:100%; height:30%;" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </ng-container>

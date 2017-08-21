@@ -1,9 +1,10 @@
-import { NgModule} from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { SafePipeModule } from 'safe-pipe';
+import { RelativeTimeFilterPipe } from './pipes/date.pipe'
 
 import { CommentModule } from './Comments/comments.module';
 
@@ -60,13 +61,15 @@ const appRoutes: Routes = [
     SettingsComponent,
     ProfileComponent,
     FollowingComponent,
-    FollowersComponent
+    FollowersComponent,
+    RelativeTimeFilterPipe
   ],
   providers: [
     UserService,
     EmitterService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent ],
+  schemas: [ NO_ERRORS_SCHEMA ]
 })
 export class AppModule {
 }
