@@ -315,8 +315,8 @@ var Server = function () {
                         updatedTime: req.body.updatedTime,
                         updatedBy: req.body.updatedBy,
                         time: Date.now(),
-                        likes: req.body.likes
-
+                        likes: req.body.likes,
+                        maxLength: req.body.maxLength
                     };
 
                     userPosts.push(newUserPosts);
@@ -371,6 +371,7 @@ var Server = function () {
                     findUserDetailById[0].updatedBy = req.body.updatedBy;
                     findUserDetailById[0].time = findUserDetailById[0].creationTime - findUserDetailById[0].updatedTime;
                     findUserDetailById[0].likes = req.body.likes;
+                    findUserDetailById[0].maxLength = req.body.maxLength;
 
                     userDetails.splice(idIndex, 1, findUserDetailById[0]);
                     _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
