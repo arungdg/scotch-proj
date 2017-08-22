@@ -226,6 +226,7 @@ class Server {
                 sortedData = _.sortBy(unsortedData, 'id');
                 //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
                 var sortedData = JSON.stringify(sortedData.reverse());
+                //console.log("Testing: " + JSON.parse(sortedData) + "\n");
                 res.json(JSON.parse(sortedData));
             });
         });
@@ -273,8 +274,11 @@ class Server {
                                                     console.log('Administrator notified');
                                                   }
                                                 });*/
-                    res.json(userPosts);
+                    //res.json(userPosts);
                 });
+                sortedData = _.sortBy(userPosts, 'id');
+                var sortedData = JSON.stringify(sortedData.reverse());
+                res.json(JSON.parse(sortedData));
             });
         });
         this.app.put('/api/userPosts/:id', (req, res) => {

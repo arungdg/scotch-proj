@@ -257,6 +257,7 @@ var Server = function () {
                     sortedData = _.sortBy(unsortedData, 'id');
                     //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
                     var sortedData = JSON.stringify(sortedData.reverse());
+                    //console.log("Testing: " + JSON.parse(sortedData) + "\n");
                     res.json(JSON.parse(sortedData));
                 });
             });
@@ -304,14 +305,11 @@ var Server = function () {
                                                         console.log('Administrator notified');
                                                       }
                                                     });*/
-                        var unsortedData = JSON.parse(data);
-                        //console.log("Unsorted: " + JSON.stringify(unsortedData) + "\n");
-                        sortedData = _.sortBy(unsortedData, 'id');
-                        //console.log("Sorted: " + JSON.stringify(sortedData.reverse()));
-                        var sortedData = JSON.stringify(sortedData.reverse());
-                        res.json(JSON.parse(sortedData));
                         //res.json(userPosts);
                     });
+                    sortedData = _.sortBy(userPosts, 'id');
+                    var sortedData = JSON.stringify(sortedData.reverse());
+                    res.json(JSON.parse(sortedData));
                 });
             });
             this.app.put('/api/userPosts/:id', function (req, res) {

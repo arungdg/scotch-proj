@@ -668,5 +668,57 @@
         "likedByMe": false,
         "creationTime": 1503321078243,
         "likes": 9
+    },
+    {
+        "id": 1503395733245,
+        "name": "Arun Gadag",
+        "text": "This is Tuesday noon.",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503395733245,
+        "likes": 9
+    },
+    {
+        "id": 1503396130978,
+        "name": "Arun Gadag",
+        "text": "What up!",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503396130978,
+        "likes": 9
+    },
+    {
+        "id": 1503396550467,
+        "name": "Arun Gadag",
+        "text": "Hi, this is Arun reporting on a Tuesday noon at 15:39!",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503396550467,
+        "likes": 9
+    },
+    {
+        "id": 1503396768267,
+        "name": "Arun Gadag",
+        "text": "This is a new post trying POST in grid view",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503396768267,
+        "likes": 7
     }
 ]

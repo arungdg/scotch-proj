@@ -71,8 +71,8 @@
 <br/>
 <div class="container">
     <div class="card-columns">
-        <div class="card" *ngFor="let userPost of userPosts">
-            <ng-container *ngIf="userPost.postPic[0]">
+        <div *ngFor="let userPost of userPosts">
+            <div class="card" *ngIf="userPost.postPic[0]">
                 <div class="card-block">
                     <div class="row">
                         <div class="col-2">
@@ -93,13 +93,7 @@
                     <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                     <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                 </div>
-            </ng-container>
-            <!--ng-container *ngIf="!userPost.postPic[0]">
-                <div style="display:none;"></div>
-            </ng-container>
-            <ng-container *ngIf="userPost.videoUrl[0]">
-                <div style="display:none;"></div>
-            </ng-container-->
+            </div>
         </div>
     </div>
 </div>

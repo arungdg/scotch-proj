@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { SafePipeModule } from 'safe-pipe';
-import { RelativeTimeFilterPipe } from './pipes/date.pipe'
+import { RelativeTimeFilterPipe } from './pipes/date.pipe';
 
 import { CommentModule } from './Comments/comments.module';
 
