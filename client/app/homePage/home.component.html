@@ -2,7 +2,7 @@
 <div class="container-fluid" style="background-image: url(./assets/beach6.jpg);">
     <div class="row align-items-center justify-content-center">
         <!-- Button trigger modal -->
-        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
+        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal" style="outline: none;">
             <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
         </button>
         <!-- Modal -->
@@ -49,7 +49,7 @@
     </div>
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-end" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
@@ -93,10 +93,10 @@
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-4 col-sm-4 col-xs-6">
                                             <span style="font-size:20px;">{{userDetail.name}}</span>
                                         </div>
-                                        <div class="col-8">
+                                        <div class="col-8 col-sm-8 col-xs-6">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
                                                 <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
@@ -107,7 +107,25 @@
                                     </div>
                                 </div>
                                 <p class="card-text">{{userDetail.text}}</p>
-                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <p class="card-text">{{userDetail.extendedText | shorten: userDetail.maxLength: '...'}}</p>
+                                <div [id]=userDetail.id *ngIf="userDetail.maxLength > 9" (click)="showMore(userDetail)" class="expand">
+                                    Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
+                                <!--
+                                <div id="hide" *ngIf="userDetail.maxLength > 9" (click)="show(userDetail)">
+                                    {{showMore ? 'show ' : 'hide '}}&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
+                                
+                                <p>{{longStr | shorten: maxLength: '...'}}</p>
+                                <div *ngIf="longStr.length > maxLength" (click)="showAll()">Read More</div>
+                                <div class="read-more-link">
+                                    <a readMore [readMore-length]="50" [readMore-element]="textContent">
+                                        <span class="less">Less</span>
+                                        <span class="more">More</span>
+                                    </a>
+                                </div>
+                                -->
+
                             </div>
                         </div>
                     </div>
@@ -116,7 +134,7 @@
         </ng-container>
         <ng-container *ngIf="userDetail.postPic[0]">
             <div class="col align-self-center offset-md-2">
-                <div class="card" style="width:80%;height:auto;">
+                <div class="card" style="width: 80%; height:auto;">
                     <div class="card-block">
                         <div class="row">
                             <div class="col-1">
@@ -125,15 +143,15 @@
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-3 col-sm-4">
                                             <span style="font-size:20px;">{{userDetail.name}}</span>
                                         </div>
-                                        <div class="col-8">
+                                        <div class="col-8 col-sm-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
-                                                            <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
-                                                        </span>
+                                                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -158,10 +176,10 @@
                             <div class="col-11">
                                 <div class="card-title">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-3 col-sm-4">
                                             <span style="font-size:20px;">{{userDetail.name}}</span>
                                         </div>
-                                        <div class="col-8">
+                                        <div class="col-8 col-sm-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
                                                     <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
@@ -171,8 +189,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text" style="color:#424242;">{{userDetail.imageCaption[0]}}</p>
-                                <p class="card-text"><small class="text-muted">{{userDetail.postPic[0]}}</small></p>
+                                <p class="card-text" style="color:#424242;">{{userDetail.videoCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userDetail.videoUrl[0]}}</small></p>
                             </div>
                         </div>
                     </div>
@@ -181,5 +199,9 @@
             </div>
         </ng-container>
     </div>
+</div>
+
+<div align="center" id="loadMore" (click)="loadMore();">
+    LOAD MORE
 </div>
 <my-footer></my-footer>

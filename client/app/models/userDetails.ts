@@ -14,6 +14,7 @@ export class UserDetails {
         public updatedTime: any,
         public updatedBy: string,
         public time: any,
-        public likes: number
+        public likes: number,
+        public maxLength: number
         ){}
 }
