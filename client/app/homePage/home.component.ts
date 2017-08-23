@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnChanges {
     limit:number = 5;
     button: string = 'Load more...';
     totalPosts:number;
+    
     constructor(
         private userService: UserService,
         private fb: FormBuilder
@@ -36,7 +37,8 @@ export class HomeComponent implements OnInit, OnChanges {
             videoCaption: [''],
             likedByMe:  [false],
             creationTime:  new Date(),
-            likes: 9
+            likes: 9,
+            maxLength: 10
         });
     }
 
@@ -85,4 +87,10 @@ export class HomeComponent implements OnInit, OnChanges {
             this.button = 'End of posts!';
         }*/
     }
- }
+
+    showMore(user: UserPosts) {
+        let id = user.id;
+        user.maxLength = user.text.length;        
+        document.getElementById(id).style.display = 'none';
+    }
+}

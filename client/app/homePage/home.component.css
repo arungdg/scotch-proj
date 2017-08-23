@@ -103,5 +103,30 @@ textarea {
     border: none;
     background-color: transparent;
     color: #757575;
+}
+
+#navbarLists {
+    margin-bottom: -8px;
+}
+
+.modal-header .close {
+    outline: none;
+    float: right !important;
+    margin-right: -50px !important;
+    margin-top: -80px !important;
+    background-color: transparent !important;
+    border: 1px solid grey;
+    border-radius: 15px !important;
+    width: 25px !important;
+    height: 25px !important;
+    opacity: 1 !important;
+}
+
+.close {
+    color: grey;
+}
+
+.expand {
+    color: grey;
     cursor: pointer;
 }

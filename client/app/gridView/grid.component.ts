@@ -32,8 +32,9 @@ export class GridComponent {
             videoCaption: [''],
             likedByMe:  [false],
             creationTime:  new Date(),
-            likes: 7
-        })
+            likes: 7,
+            maxLength: 10
+        });
     }
 
     getUserDetails():void {
@@ -63,5 +64,12 @@ export class GridComponent {
 
     ngOnChanges() {
         this.getUserDetails();
+    }
+
+    //for expand functionality
+    showMore(user:UserPosts) {
+        let id = user.id;
+        user.maxLength = user.text.length;        
+        document.getElementById(id).style.display = 'none';
     }
 }
