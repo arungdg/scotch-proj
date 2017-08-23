@@ -106,9 +106,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
-                                <div [id]=userPost.id *ngIf="userPost.maxLength > 9" (click)="showMore(userPost)" class="expand">
-                                    Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <p class="card-text" id="userText">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
+                                <div [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)" class="expand">Expand&nbsp;
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -133,11 +133,8 @@
                                         <div class="col-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
-                                                            <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
-                                                        </span>
-                                                <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                                 </span>
                                             </div>
                                         </div>
@@ -186,9 +183,8 @@
             </div>
         </ng-container>
     </div>
-    <div class="row justify-content-center">
-        <button type="button" class="btn btn-primary" id="loadMore" (click)="click();">{{button}}</button>
-    </div>
 </div>
-
+<div class="row justify-content-center">
+    <button type="button" class="btn btn-primary" id="loadMore" (click)="click();">{{button}}</button>
+</div>
 <my-footer></my-footer>
