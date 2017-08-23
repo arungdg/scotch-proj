@@ -10,6 +10,6 @@ export class UserPosts {
         public videoCaption:string,
         public likedByMe: boolean,
         public creationTime: any,
-        public likes: number
+        public maxLength: number
         ){}
 }
