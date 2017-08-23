@@ -64,4 +64,11 @@ export class ListComponent implements OnChanges, OnInit {
     ngOnChanges() {
         this.getUserDetails();
     }
+
+    //for expand functionality
+    showMore(user:UserPosts) {
+        let id = user.id;
+        user.maxLength = user.text.length;        
+        document.getElementById(id).style.display = 'none';
+    }
 }

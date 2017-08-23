@@ -106,7 +106,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text">{{userPost.text}}</p>
+                                <p class="card-text">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
+                                <div [id]=userPost.id *ngIf="userPost.maxLength > 9" (click)="showMore(userPost)" class="expand">
+                                    Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
