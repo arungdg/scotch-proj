@@ -13,10 +13,11 @@ export class HomeComponent implements OnInit, OnChanges {
 
     userPosts: UserPosts[];
     newUserPosts: FormGroup;
-    initLimit: number = 0;
     limit:number = 5;
     button: string = 'Load more...';
-    totalPosts:number;
+    //totalPosts:number;
+    expand: boolean = false;
+    
     constructor(
         private userService: UserService,
         private fb: FormBuilder
@@ -36,14 +37,15 @@ export class HomeComponent implements OnInit, OnChanges {
             videoCaption: [''],
             likedByMe:  [false],
             creationTime:  new Date(),
-            likes: 9
+            likes: 9,
+            maxLength: 100
         });
     }
 
     getUserDetails():void {
         this.userService.getUserDetails()
         .subscribe(
-            userPosts => this.userPosts = userPosts.slice(this.initLimit,this.limit),
+            userPosts => this.userPosts = userPosts.slice(0,this.limit),
             err => {
                 console.log(err);
             }
@@ -58,7 +60,7 @@ export class HomeComponent implements OnInit, OnChanges {
     addNewPost(user: UserPosts):void {
         this.userService.addNewPost(user)
         .subscribe(
-            userPosts => this.userPosts = userPosts,
+            userPosts => this.userPosts = userPosts.slice(0,this.limit),
             err => {
                 console.log(err);
             }
@@ -74,15 +76,29 @@ export class HomeComponent implements OnInit, OnChanges {
         this.limit = this.limit + 5;
         this.userService.getUserDetails()
         .subscribe(
-            userPosts => this.userPosts = userPosts.slice(this.initLimit,this.limit),
+            userPosts => this.userPosts = userPosts.slice(0,this.limit),
             err => {
                 console.log(err);
             }
         );
-        console.log("Userposts: " + this.userPosts.length);
-        console.log("Totalposts: " + this.totalPosts);
+        //console.log("Userposts: " + this.userPosts.length);
+        //console.log("Totalposts: " + this.totalPosts);
         /*if(this.userPosts.length == this.totalPosts) {
             this.button = 'End of posts!';
         }*/
     }
- }
+
+    showMore(user: UserPosts) {
+        if(this.expand === false) {
+            user.maxLength = user.text.length;
+            this.expand = true; 
+            let id = user.id;
+            document.getElementById(id).innerHTML = 'Less&nbsp;<i class="fa fa-caret-up" aria-hidden="true"></i>';
+        } else {
+            user.maxLength = 100;
+            this.expand = false;
+            let id = user.id;
+            document.getElementById(id).innerHTML = 'Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>';
+        }
+    }
+}

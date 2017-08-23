@@ -2,7 +2,7 @@
 <div class="container-fluid" style="background-image: url(./assets/beach6.jpg);">
     <div class="row align-items-center justify-content-center">
         <!-- Button trigger modal -->
-        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
+        <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal" style="outline: none;">
             <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
         </button>
         <!-- Modal -->
@@ -49,7 +49,7 @@
     </div>
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-end" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
@@ -106,7 +106,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text">{{userPost.text}}</p>
+                                <p class="card-text" id="userText">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
+                                <div [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)" class="expand">Expand&nbsp;
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +118,7 @@
         </ng-container>
         <ng-container *ngIf="userPost.postPic[0]">
             <div class="col align-self-center offset-md-2">
-                <div class="card" style="width:80%;height:auto;">
+                <div class="card" style="width: 80%; height:auto;">
                     <div class="card-block">
                         <div class="row">
                             <div class="col-1">
@@ -130,9 +133,9 @@
                                         <div class="col-8">
                                             <div class="row justify-content-end">
                                                 <span class="text-muted text-right" style="text-align:right;">
-                                                            <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                                                            <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
-                                                        </span>
+                                                    <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                                    <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
+                                                </span>
                                             </div>
                                         </div>
                                     </div>
@@ -170,8 +173,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p class="card-text" style="color:#424242;">{{userPost.imageCaption[0]}}</p>
-                                <p class="card-text"><small class="text-muted">{{userPost.postPic[0]}}</small></p>
+                                <p class="card-text" style="color:#424242;">{{userPost.videoCaption[0]}}</p>
+                                <p class="card-text"><small class="text-muted">{{userPost.videoUrl[0]}}</small></p>
                             </div>
                         </div>
                     </div>
@@ -180,8 +183,8 @@
             </div>
         </ng-container>
     </div>
-    <div class="row justify-content-center">
-        <button type="button" class="btn btn-primary" id="loadMore" (click)="click();">{{button}}</button>
-    </div>
+</div>
+<div class="row justify-content-center">
+    <button type="button" class="btn btn-primary" id="loadMore" (click)="click();">{{button}}</button>
 </div>
 <my-footer></my-footer>

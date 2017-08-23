@@ -140,3 +140,17 @@ input:checked+.slider:before {
     color: #00BFA5;
     border: 1px solid #00BFA5;
 }
+
+.input-icon {
+    position: absolute;
+    left: 3px;
+    top: calc(50% - 0.5em);
+}
+
+input {
+    padding-left: 35px;
+}
+
+.input-wrapper {
+    position: relative;
+}

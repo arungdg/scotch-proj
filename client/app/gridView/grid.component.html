@@ -95,8 +95,12 @@
                                 <div class="card-title">
                                     <span style="font-size:20px;">{{userPost.name}}</span>
                                 </div>
-                                <p class="card-text" style="color:#424242;">{{userPost.text}}</p>
-                                <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
+                                <p class="card-text" style="color:#424242;">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
+                                <div class="row">
+                                    <div [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)" class="col-5 expand">
+                                        Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -152,5 +156,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row justify-content-center">
+    <button type="button" class="btn btn-primary" id="loadMore" (click)="click();">{{button}}</button>
 </div>
 <my-footer></my-footer>

@@ -280,8 +280,7 @@ var Server = function () {
                         videoCaption: req.body.videoCaption,
                         likedByMe: req.body.likedByMe,
                         creationTime: Date.now(),
-                        likes: req.body.likes
-
+                        maxLength: req.body.maxLength
                     };
 
                     userPosts.push(newUserPosts);
@@ -336,6 +335,7 @@ var Server = function () {
                     findUserDetailById[0].likedByMe = req.body.likedByMe;
                     findUserDetailById[0].creationTime = req.body.id;
                     findUserDetailById[0].likes = req.body.likes;
+                    findUserDetailById[0].maxLength = req.body.maxLength;
 
                     userDetails.splice(idIndex, 1, findUserDetailById[0]);
                     _this.fs.writeFile(_this.dataFile, JSON.stringify(userDetails, null, 4), function (err) {
