@@ -5,6 +5,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { SafePipeModule } from 'safe-pipe';
 import { RelativeTimeFilterPipe } from './pipes/date.pipe';
+import { ShortenPipe } from "./pipes/shorten";
 
 import { CommentModule } from './Comments/comments.module';
 
@@ -23,7 +24,6 @@ import { FollowingComponent } from "./following/following.component";
 import { FollowersComponent } from "./followers/followers.component";
 
 import { UserService } from './services/user.service';
-import { ShortenPipe } from "./pipes/shorten";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
