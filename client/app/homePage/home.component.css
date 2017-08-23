@@ -98,3 +98,10 @@ textarea {
     width: 100%;
     border-radius: 0px;
 }
+
+#loadMore {
+    border: none;
+    background-color: transparent;
+    color: #757575;
+    cursor: pointer;
+}

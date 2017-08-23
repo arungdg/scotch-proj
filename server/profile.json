@@ -720,5 +720,31 @@
         "likedByMe": false,
         "creationTime": 1503396768267,
         "likes": 7
+    },
+    {
+        "id": 1503463038274,
+        "name": "Arun Gadag",
+        "text": "This is Wednesday morning!",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503463038274,
+        "likes": 9
+    },
+    {
+        "id": 1503465523381,
+        "name": "Arun Gadag",
+        "text": "Testing new data against POST",
+        "profilePic": "./assets/arun.jpg",
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
+        "likedByMe": false,
+        "creationTime": 1503465523381,
+        "likes": 9
     }
 ]
