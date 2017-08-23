@@ -96,14 +96,19 @@
                                     <span style="font-size:20px;">{{userDetail.name}}</span>
                                 </div>
                                 <p class="card-text" style="color:#424242;">{{userDetail.text}}</p>
-                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <p class="card-text">{{userDetail.extendedText | shorten: userDetail.maxLength: '...'}}</p>
+                                <div class="row">
+                                    <div [id]=userDetail.id *ngIf="userDetail.maxLength > 9" (click)="showMore(userDetail)" class="col-5 expand">
+                                        Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-7 text-muted text-right">
+                                        <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
+                                        <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
+                                    </div>
+                                </div>
                                 <!--p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p-->
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer text-muted text-right">
-                        <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
-                        <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> 2m
                     </div>
                 </ng-container>
                 <ng-container *ngIf="userDetail.postPic[0]">

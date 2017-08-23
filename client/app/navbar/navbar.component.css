@@ -23,20 +23,25 @@ input {
     display: block;
 }
 
+
+/*
 .dropdown-menu {
-    display: none;
     position: absolute;
     background-color: #f9f9f9;
-    width: 50px;
+    width: 30px;
     right: 0;
     z-index: 1;
 }
+*/
 
+
+/*
 .dropdown {
-    float: right;
+    float: left;
     margin-top: 10px;
     outline: none;
 }
+*/
 
 img {
     width: 30px;
@@ -126,6 +131,9 @@ textarea {
     width: 25px;
     height: 25px;
 }
+
+
+/* for modal window close button*/
 
 .modal-header .close {
     outline: none;

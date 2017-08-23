@@ -121,3 +121,8 @@ textarea {
 .close {
     color: grey;
 }
+
+.expand {
+    color: grey;
+    cursor: pointer;
+}

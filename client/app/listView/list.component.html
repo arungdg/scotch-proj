@@ -107,7 +107,10 @@
                                     </div>
                                 </div>
                                 <p class="card-text">{{userDetail.text}}</p>
-                                <p class="card-text">{{userDetail.extendedText}}</p>
+                                <p class="card-text">{{userDetail.extendedText | shorten: userDetail.maxLength: '...'}}</p>
+                                <div [id]=userDetail.id *ngIf="userDetail.maxLength > 9" (click)="showMore(userDetail)" class="expand">
+                                    Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i>
+                                </div>
                             </div>
                         </div>
                     </div>

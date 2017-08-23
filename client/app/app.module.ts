@@ -23,7 +23,6 @@ import { FollowersComponent } from "./followers/followers.component";
 
 import { UserService } from './services/user.service';
 import { ShortenPipe } from "./pipes/shorten";
-import { LimitToPipe } from "./pipes/limitTo";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -63,8 +62,7 @@ const appRoutes: Routes = [
     ProfileComponent,
     FollowingComponent,
     FollowersComponent,
-    ShortenPipe, 
-    LimitToPipe
+    ShortenPipe
   ],
   providers: [
     UserService,
