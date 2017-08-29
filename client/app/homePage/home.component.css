@@ -45,10 +45,17 @@ textarea {
 
 .modal-content {
     background-color: #E0E0E0;
+    width: 600px;
+    margin-left: -40px;
+}
+
+#textArea {
+    border-radius: 3px;
+    height: 90px;
 }
 
 .post {
-    background-color: #00BFA5;
+    background-color: #01B286;
     color: #F5F5F5;
     font-size: 14px;
     float: right;
@@ -105,10 +112,6 @@ textarea {
     color: #757575;
 }
 
-#navbarLists {
-    margin-bottom: -8px;
-}
-
 .modal-header .close {
     outline: none;
     float: right !important;
@@ -124,9 +127,15 @@ textarea {
 
 .close {
     color: grey;
+    text-shadow: none;
 }
 
+
+/*for expand functionality*/
+
 .expand {
-    color: grey;
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -4px;
 }

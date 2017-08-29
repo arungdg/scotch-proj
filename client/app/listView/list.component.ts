@@ -94,6 +94,9 @@ export class ListComponent implements OnChanges, OnInit {
             this.expand = true; 
             let id = user.id;
             document.getElementById(id).innerHTML = 'Less&nbsp;<i class="fa fa-caret-up" aria-hidden="true"></i>';
+            document.getElementById(id).style.fontSize = '13px';
+            document.getElementById(id).style.color = '#C4C7D1';
+            document.getElementById(id).style.marginBottom = '-4px';
         } else {
             user.maxLength = 100;
             this.expand = false;

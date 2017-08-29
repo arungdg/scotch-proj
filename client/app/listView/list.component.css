@@ -47,7 +47,7 @@ textarea {
 }
 
 .post {
-    background-color: #00BFA5;
+    background-color: #01B286;
     color: #F5F5F5;
     font-size: 14px;
 }
@@ -124,6 +124,5 @@ textarea {
 }
 
 .expand {
-    color: grey;
     cursor: pointer;
 }
