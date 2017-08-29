@@ -98,11 +98,11 @@
                                 <div class="row" style="margin-left: -25px; margin-top: 2px;">
                                     <p class="card-text" style="color: #797E87;">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
                                 </div><br/>
-                                <div class="row">
-                                    <div class="col-1" [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)" class="col-5 expand">
-                                        <p style="font-size: 13px; color:#C4C7D1; margin-left: -25px;">Expand&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></p>
+                                <div class="row" style="margin-right: -40px;">
+                                    <div class="col-4 expand" [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)">
+                                        <p style="font-size: 13px; color:#C4C7D1; margin-left: -25px; margin-bottom: -20px;">Expand&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></p>
                                     </div>
-                                    <div class="col-8 card-footer" style="text-align:right; font-size: 15px; color:#C4C7D1;">
+                                    <div class="col-8 card-footer text-right" style="margin-bottom: -20px; margin-top: -15px; text-align:right; font-size: 15px; color:#C4C7D1;">
                                         <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                                         <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                     </div>
