@@ -19,7 +19,8 @@ export class UserService {
      // Fetch all existing comments
      getUserDetails() : Observable<UserPosts[]>{
          // ...using get request
-         return this.http.get(this.url)
+         return this.http.get(this.url) // Pagination: ?offset=0;size=10
+                        // 1--------10 11-------20 21--------30
                         // ...and calling .json() on the response to return data
                          .map((res:Response) => res.json())
                          //...errors if any

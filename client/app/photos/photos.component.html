@@ -79,17 +79,17 @@
                             <img [src]=userPost.profilePic alt="Profile" style="width:40px; height:40px;">
                         </div>
                         <div class="col-9">
-                            <div class="card-title" style="margin-top: -5px; margin-left: -1px;">
-                                <span style="font-size:20px; color: #72777C;">{{userPost.name}}</span>
+                            <div class="card-title" style="margin-top: 0px; margin-left: -1px;">
+                                <span style="font-size:16px; color: #4E525B;">{{userPost.name}}</span>
                             </div>
-                            <p class="card-text" style="margin-left: -1px; margin-top: -9px; color: #797E87;">{{userPost.imageCaption[0]}}
+                            <p class="card-text" style="margin-left: -1px; margin-top: -9px; color: #727480; font-size: 14px;">{{userPost.imageCaption[0]}}
                                 <small style="color: #C4C7D1;">{{userPost.postPic[0]}}</small>
                             </p>
                         </div>
                     </div>
                 </div>
                 <img class="card-img-bottom" [src]=userPost.postPic[0] alt="Card image cap">
-                <div class="card-footer text-right" style="text-align:right; font-size: 15px; color:#C4C7D1; margin-right: 4px;">
+                <div class="card-footer text-right" style="text-align:right; font-size: 14px; color:#D9DDE0; margin-right: 4px;">
                     <i class="fa fa-reply " aria-hidden="true" style="margin:10px;"></i>
                     <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                 </div>
