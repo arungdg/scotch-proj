@@ -3,9 +3,10 @@
     <div class="row align-items-center justify-content-center">
         <!-- Button trigger modal -->
         <button type="button" class="btn-modal" data-toggle="modal" data-target="#modal">
-                <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
-            </button>
+            <img src="./assets/md-btn.png" style="height:23%; width:100%;" alt="Button"/>
+        </button>
         <!-- Modal -->
+        <!--
         <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -46,6 +47,7 @@
                 </div>
             </div>
         </div>
+        -->
     </div>
     <div class="container">
         <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
@@ -98,11 +100,11 @@
                                 <div class="row" style="margin-left: -25px; margin-top: 2px;">
                                     <p class="card-text" style="color: #727480; font-size: 14px;">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
                                 </div><br/>
-                                <div class="row" style="margin-right: -40px;">
-                                    <div class="col-4 expand" [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)">
-                                        <p style="font-size: 13px; color:#C4C7D1; margin-left: -25px; margin-bottom: -20px;">Expand&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></p>
+                                <div class="row" style="margin-left: -25px;">
+                                    <div class="col-5 expand" [id]=userPost.id *ngIf="userPost.maxLength > 99" (click)="showMore(userPost)">
+                                        <p style="font-size: 13px; color:#C4C7D1; margin-top: 2%; margin-bottom: -5px;margin-left: -15px;">Expand&nbsp;&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></p>
                                     </div>
-                                    <div class="col-8 card-footer text-right" style="margin-bottom: -20px; margin-top: -15px; text-align:right; font-size: 14px; color:#D9DDE0;">
+                                    <div class="col-7 card-footer text-right" style="margin-bottom: -20px; margin-top: -15px; text-align:right; font-size: 14px; color:#D9DDE0; margin-left: 53%;">
                                         <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                                         <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
                                     </div>

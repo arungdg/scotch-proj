@@ -69,12 +69,13 @@ textarea {
     height: 150px;
     margin: 100px 0px 100px 0px;
     background-color: rgba(0, 191, 165, 0.5);
-    color: #F5F5F5;*/
+    color: #F5F5F5;
+    cursor: pointer;*/
     padding: 0px;
     margin: 100px 0px 100px 0px;
     background-color: transparent;
     border: none;
-    cursor: pointer;
+    outline: none;
 }
 
 .dropdown-toggle {
@@ -130,4 +131,7 @@ textarea {
 
 .expand {
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -25px;
 }

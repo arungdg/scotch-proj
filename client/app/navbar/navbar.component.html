@@ -18,10 +18,10 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" style="border:none;">
-                        <h5 class="modal-title" id="modalTitle">Create new message</h5>
+                        <p class="modal-title" id="modalTitle" style="margin-left: 12px; color: #808080; height: 25px; font-size: 18px; font-weight: 2px;">Create new message</p>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
                         <form novalidate [formGroup]="newUserPosts">
@@ -29,24 +29,24 @@
                                 <div class="col-11">
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <textarea class="form-control" formControlName="text" autofocus></textarea>
+                                            <textarea class="form-control" formControlName="text" autofocus id="textArea"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <button type="button" class="btn add-media">
-                                        <i class="fa fa-camera" aria-hidden="true"></i> Add Photo
+                                    <button type="button" class="btn add-media" style="margin-left: 12px; color: #A9A9A9; font-size: 14px;">
+                                        <i class=" fa fa-camera" aria-hidden="true "></i> &nbsp;&nbsp;Add Photo
                                     </button>
                                 </div>
                                 <div class="col-3">
-                                    <button type="button" class="btn add-media">
-                                        <i class="fa fa-video-camera" aria-hidden="true"></i> Add Video
-                                    </button>
+                                    <button type="button" class="btn add-media" style="color: #A9A9A9; font-size: 14px;">
+                                    <i class="fa fa-video-camera " aria-hidden="true"></i> &nbsp;&nbsp;Add Video
+                                </button>
                                 </div>
-                                <div class="col">
-                                    <button type="submit" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
+                                <div class="col-6" style=" color:#01B286;">
+                                    <button type="submit" style="margin-right: 28px; width: 75px;" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
                                 </div>
                             </div>
                         </form>

@@ -125,4 +125,7 @@ textarea {
 
 .expand {
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -4px;
 }

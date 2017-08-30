@@ -87,6 +87,24 @@ textarea {
     cursor: pointer;
 }
 
+.modal-header .close {
+    outline: none;
+    float: right !important;
+    margin-right: -50px !important;
+    margin-top: -80px !important;
+    background-color: transparent !important;
+    border: 1px solid grey;
+    border-radius: 15px !important;
+    width: 25px !important;
+    height: 25px !important;
+    opacity: 1 !important;
+}
+
+.close {
+    color: grey;
+    text-shadow: none;
+}
+
 .dropdown-toggle {
     color: #9E9E9E;
 }
@@ -110,24 +128,6 @@ textarea {
     border: none;
     background-color: transparent;
     color: #757575;
-}
-
-.modal-header .close {
-    outline: none;
-    float: right !important;
-    margin-right: -50px !important;
-    margin-top: -80px !important;
-    background-color: transparent !important;
-    border: 1px solid grey;
-    border-radius: 15px !important;
-    width: 25px !important;
-    height: 25px !important;
-    opacity: 1 !important;
-}
-
-.close {
-    color: grey;
-    text-shadow: none;
 }
 
 
