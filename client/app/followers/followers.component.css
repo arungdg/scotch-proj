@@ -2,6 +2,7 @@ a:link {
     border: none;
     background-color: transparent;
     margin: 0px;
+    padding-bottom: 15px;
     font-size: 12px;
 }
 
@@ -47,11 +48,11 @@ img {
 /* .squaredTwo */
 
 .squaredTwo {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     position: relative;
-    margin: 20px auto;
-    background: #00BFA5;
+    margin-top: 6px;
+    background: #01B286;
     border: none;
     border-radius: 4px;
 }
@@ -63,12 +64,12 @@ img {
     position: absolute;
     left: 4px;
     top: 4px;
-    background: #00BFA5;
+    background: #01B286;
 }
 
 .squaredTwo label:after {
     content: '';
-    width: 15px;
+    width: 13px;
     height: 7px;
     position: absolute;
     top: 6px;
