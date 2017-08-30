@@ -67,10 +67,17 @@ img {
 
 .modal-content {
     background-color: #E0E0E0;
+    width: 600px;
+    margin-left: -40px;
+}
+
+#textArea {
+    border-radius: 3px;
+    height: 90px;
 }
 
 .post {
-    background-color: #00BFA5;
+    background-color: #01B286;
     color: #F5F5F5;
     font-size: 14px;
     float: right;
@@ -103,6 +110,24 @@ img {
     border-radius: 2px;
 }
 
+.modal-header .close {
+    outline: none;
+    float: right !important;
+    margin-right: -50px !important;
+    margin-top: -80px !important;
+    background-color: transparent !important;
+    border: 1px solid grey;
+    border-radius: 15px !important;
+    width: 25px !important;
+    height: 25px !important;
+    opacity: 1 !important;
+}
+
+.close {
+    color: grey;
+    text-shadow: none;
+}
+
 .dropdown-toggle {
     color: #9E9E9E;
 }
@@ -128,28 +153,12 @@ img {
     color: #757575;
 }
 
-#navbarLists {
-    margin-bottom: -8px;
-}
 
-.modal-header .close {
-    outline: none;
-    float: right !important;
-    margin-right: -50px !important;
-    margin-top: -80px !important;
-    background-color: transparent !important;
-    border: 1px solid grey;
-    border-radius: 15px !important;
-    width: 25px !important;
-    height: 25px !important;
-    opacity: 1 !important;
-}
-
-.close {
-    color: grey;
-}
+/*for expand functionality*/
 
 .expand {
-    color: grey;
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -4px;
 }

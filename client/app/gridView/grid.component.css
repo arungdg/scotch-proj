@@ -97,8 +97,7 @@ img {
     /*margin: 100px 0px 100px 0px;
     background-color: transparent;*/
     border: none;
-    cursor: pointer;
-    border-radius: 2px;
+    outline: none;
 }
 
 .dropdown-toggle {
@@ -153,6 +152,8 @@ img {
 }
 
 .expand {
-    color: grey;
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -25px;
 }

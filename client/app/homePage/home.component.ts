@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit, OnChanges {
     userPosts: UserPosts[];
     newUserPosts: FormGroup;
     limit:number = 5;
-    button: string = 'Load more...';
     //totalPosts:number;
     expand: boolean = false;
     

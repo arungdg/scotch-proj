@@ -70,7 +70,7 @@ img {
 }
 
 .post {
-    background-color: #00BFA5;
+    background-color: #01B286;
     color: #F5F5F5;
     font-size: 14px;
 }
@@ -148,6 +148,8 @@ img {
 }
 
 .expand {
-    color: grey;
     cursor: pointer;
+    font-size: 13px;
+    color: #C4C7D1;
+    margin-bottom: -4px;
 }
