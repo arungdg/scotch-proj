@@ -16,32 +16,29 @@ input {
 }
 
 .dropdown-item {
-    background-color: #F5F5F5;
+    background-color: #F4F5F7;
+    color: #82878F;
+    padding: 4px 25px 4px 15px;
+}
+
+.dropdown-toggle {
+    background-color: #292B2C !important;
 }
 
 .dropdown:hover .dropdown-menu {
     display: block;
 }
 
-
-/*
 .dropdown-menu {
     position: absolute;
-    background-color: #f9f9f9;
-    width: 30px;
-    right: 0;
-    z-index: 1;
+    background-color: #F4F5F7;
+    min-width: 40px;
 }
-*/
 
-
-/*
 .dropdown {
     float: left;
-    margin-top: 10px;
-    outline: none;
+    margin-left: 10px;
 }
-*/
 
 img {
     width: 30px;
@@ -122,6 +119,7 @@ textarea {
     border-radius: 5px;
     z-index: 9;
     outline: none;
+    text-indent: 3px;
 }
 
 #input_img {

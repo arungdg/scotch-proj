@@ -35,7 +35,7 @@ img {
 
 #btnTextArea {
     text-align: left;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-top: 20px;
     font-family: Arial, monospace, sans-serif;
     color: #99DCCB;
@@ -48,7 +48,7 @@ img {
 .btn-cam,
 .btn-video {
     border: none;
-    margin-left: 25px;
+    margin-left: 32px;
     margin-top: 20px;
     background-color: transparent;
     color: #99DCCB;
