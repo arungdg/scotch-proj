@@ -55,7 +55,7 @@ textarea {
 }
 
 .modal {
-    margin-top: 10%;
+    vertical-align: middle;
     background-color: rgba(16, 16, 16, 0.8);
 }
 
@@ -67,7 +67,8 @@ textarea {
 .modal-content {
     background-color: #E0E0E0;
     width: 600px;
-    margin-left: -40px;
+    margin-left: -50px;
+    margin-top: 40%;
 }
 
 #textArea {
@@ -124,6 +125,7 @@ textarea {
 .close {
     color: grey;
     text-shadow: none;
+    font-weight: 300 !important;
 }
 
 .dropdown-toggle {

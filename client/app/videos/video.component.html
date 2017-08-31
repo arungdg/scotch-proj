@@ -19,7 +19,7 @@
 </div>
 </button>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+<!--div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="border:none;">
@@ -58,14 +58,14 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 </div>
 <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
+        <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:24%; width: 67%; margin-bottom: -8px;">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
@@ -95,13 +95,15 @@
                             <div class="card-title" style="margin-top: 0px; margin-left: 2px;">
                                 <span style="font-size:16px; color: #4E525B;">{{userPost.name}}</span>
                             </div>
-                            <p class="card-text" style="margin-left: 3px; margin-top: -9px; color: #727480; font-size: 14px;">{{userPost.videoCaption[0]}}
+                            <div class="card-text" style="margin-left: 3px; margin-top: -9px; color: #727480; font-size: 14px;">{{userPost.videoCaption[0]}}
                                 <small style="color: #C4C7D1;">{{userPost.videoUrl[0]}}</small>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <iframe style="width:100%; height:30%;" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <div class="card-footer text-right" style="text-align:right; font-size: 14px; color:#D9DDE0; margin-right: 4px;">
                     <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                     <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}

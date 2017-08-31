@@ -19,7 +19,7 @@
 </div>
 </button>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+<!--div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="border:none;">
@@ -58,14 +58,14 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 </div>
 <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarLists" aria-controls="navbarLists" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-        <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:18%;">
+        <div class="collapse navbar-collapse" id="navbarLists" style="margin-left:24%; width: 67%; margin-bottom: -8px;">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>ALL POSTS <span class="sr-only">(current)</span></a>
@@ -101,7 +101,9 @@
                         </div>
                     </div>
                 </div>
-                <img class="card-img-bottom" [src]=userPost.postPic[0] alt="Card image cap">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <img class="card-img-bottom embed-responsive-item" [src]=userPost.postPic[0] alt="Card image cap">
+                </div>
                 <div class="card-footer text-right" style="text-align:right; font-size: 14px; color:#D9DDE0; margin-right: 4px;">
                     <i class="fa fa-reply " aria-hidden="true" style="margin:10px;"></i>
                     <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}

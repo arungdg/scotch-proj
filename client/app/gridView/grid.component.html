@@ -19,7 +19,7 @@
 </div>
 </button>
 <!-- Modal -->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+<!--div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" style="border:none;">
@@ -57,9 +57,8 @@
                 </form>
             </div>
         </div>
-        -->
     </div>
-</div>
+</div-->
 </div>
 <div class="container">
     <nav class="navbar navbar-toggleable-md navbar-light" style="background-color:transparent;">
@@ -80,7 +79,7 @@
             </ul>
             <ul class="navbar-nav mr-auto" style="margin-left:26%;">
                 <li class="nav-item mr-sm-2">
-                    <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/listView' routerLinkActive='active'>
+                    <a class="nav-link" style="color:#F5F5F5;font-size:12px;" routerLink='/' routerLinkActive='active'>
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </a>
                 </li>
@@ -141,7 +140,9 @@
                             </div>
                         </div>
                     </div>
-                    <img class="card-img-bottom" [src]=userPost.postPic[0] alt="Card image cap">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <img class="card-img-bottom embed-responsive-item" [src]=userPost.postPic[0] alt="Card image cap">
+                    </div>
                     <div class="card-footer text-right" style="text-align:right; font-size: 14px; color:#D9DDE0; margin-right: 4px;">
                         <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                         <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
@@ -163,7 +164,9 @@
                             </div>
                         </div>
                     </div>
-                    <iframe style="width:100%; height:30%;" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     <div class="card-footer text-right" style="text-align:right; font-size: 14px; color:#D9DDE0; margin-right: 4px;">
                         <i class="fa fa-reply" aria-hidden="true" style="margin:10px;"></i>
                         <i class="fa fa-heart-o" aria-hidden="true" style="margin:10px;"></i> {{userPost.creationTime | relativeTime}}
@@ -174,7 +177,7 @@
     </div>
 </div><br/>
 <div class="row justify-content-center">
-    <button type="button" class="btn btn-primary" id="loadMore" (click)="click();" style="cursor: pointer; font-weight: bold; font-size: 11px; color: #C4C7D1;">
+    <button type="button" id="loadMore" (click)="click();">
         LOAD&nbsp;&nbsp;MORE
     </button>
 </div><br/><br/><br/><br/>
