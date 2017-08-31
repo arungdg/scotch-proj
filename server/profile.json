@@ -114,19 +114,11 @@
         "id": 1503170758888,
         "name": "Kate Winslet",
         "profilePic": "./assets/kate.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/77nNnzCItWY"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/77nNnzCItWY",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "Yes, I 'm 40 ;)"
-        ],
+        "imageCaption": "",
+        "videoCaption": "Yes, I 'm 40 ;)",
         "likedByMe": false,
         "creationTime": 1503170758888,
         "likes": 5,
@@ -150,19 +142,11 @@
         "id": 1503170758808,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/EXeTwQWrcwY"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/EXeTwQWrcwY",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "Check out my latest movie trailer you have all been waiting for."
-        ],
+        "imageCaption": "",
+        "videoCaption": "Check out my latest movie trailer you have all been waiting for.",
         "likedByMe": false,
         "creationTime": 1503170758808,
         "likes": 5,
@@ -172,19 +156,11 @@
         "id": 1503170758099,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [
-            "./assets/images/5.jpg"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/5.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "On the rocks!"
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "On the rocks!",
+        "videoCaption": "",
         "likedByMe": true,
         "creationTime": 1503170758099,
         "likes": 5,
@@ -194,19 +170,11 @@
         "id": 1503170758091,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": [
-            "./assets/images/1.jpg"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/1.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "Beautiful sunset on a peaceful island I was this summer."
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "Beautiful sunset on a peaceful island I was this summer.",
+        "videoCaption": "",
         "likedByMe": true,
         "creationTime": 1503170758091,
         "likes": 5,
@@ -216,19 +184,11 @@
         "id": 1503170758088,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "I knew it. I knew you couldn't be trusted.",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758088,
         "likes": 5,
@@ -238,19 +198,11 @@
         "id": 1503170758066,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": [
-            "./assets/images/6.jpg"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/6.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "I know we are proud of her."
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "I know we are proud of her.",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758066,
         "likes": 5,
@@ -260,19 +212,11 @@
         "id": 1503170758065,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "Lets not talk about me!",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": true,
         "creationTime": 1503170758065,
         "likes": 5,
@@ -282,19 +226,11 @@
         "id": 1503170758061,
         "name": "Kate Winslet",
         "profilePic": "./assets/kate.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "I am travelling to Miami tonight. Is there anyone I can catch up tonight for gossip?",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758061,
         "likes": 5,
@@ -304,19 +240,11 @@
         "id": 1503170758055,
         "name": "Christian Bale",
         "profilePic": "./assets/bale.jpg",
-        "postPic": [
-            "./assets/images/7.jpg"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/7.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "That's how we roll"
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "That's how we roll",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758055,
         "likes": 5,
@@ -326,19 +254,11 @@
         "id": 1503170758054,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "I am starting with the man in the mirror. I am asking him to change his ways.",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758054,
         "likes": 5,
@@ -348,19 +268,11 @@
         "id": 1503170758051,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "We must act before the world is unlivable.",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758051,
         "likes": 5,
@@ -370,19 +282,11 @@
         "id": 1503170758044,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "Climate change is an issue we all must be worried about.",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": true,
         "creationTime": 1503170758044,
         "likes": 5,
@@ -393,18 +297,10 @@
         "name": "Arun Gadag",
         "text": "Posting again without text...",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758041,
         "likes": 8,
@@ -414,19 +310,11 @@
         "id": 1503170758033,
         "name": "Jack Dawson",
         "profilePic": "./assets/leo.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/xpyrefzvTpI"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/xpyrefzvTpI",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "Efforts answered!!!"
-        ],
+        "imageCaption": "",
+        "videoCaption": "Efforts answered!!!",
         "likedByMe": true,
         "creationTime": 1503170758033,
         "likes": 5,
@@ -436,19 +324,11 @@
         "id": 1503170758030,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/sOnqjkJTMaA"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/sOnqjkJTMaA",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "The most sold album of my career."
-        ],
+        "imageCaption": "",
+        "videoCaption": "The most sold album of my career.",
         "likedByMe": false,
         "creationTime": 1503170758030,
         "likes": 5,
@@ -458,19 +338,11 @@
         "id": 1503170758023,
         "name": "Michael Jackson",
         "profilePic": "./assets/mj.jpg",
-        "postPic": [
-            "./assets/images/2.png"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/2.png",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "View outside my room!"
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "View outside my room!",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758023,
         "likes": 5,
@@ -480,19 +352,11 @@
         "id": 1503170758020,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": [
-            "./assets/images/3.jpg"
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/3.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "Hej Sweden"
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "Hej Sweden",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758020,
         "likes": 5,
@@ -516,19 +380,11 @@
         "id": 1503170758011,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "Having fun alone if you know what I mean...",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758011,
         "likes": 5,
@@ -537,20 +393,12 @@
     {
         "id": 1503170758001,
         "name": "Kate Winslet",
-        "postPic": [
-            "./assets/images/4.jpg"
-        ],
         "profilePic": "./assets/kate.jpg",
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "./assets/images/4.jpg",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            "What a colorful sunny day!"
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "What a colorful sunny day!",
+        "videoCaption": "",
         "likedByMe": false,
         "creationTime": 1503170758001,
         "likes": 5,
@@ -560,19 +408,11 @@
         "id": 1503170758000,
         "name": "Angelina Jolie",
         "profilePic": "./assets/jolie.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/vHG-CMiQuSI"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/vHG-CMiQuSI",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "FIRST THEY KILLED MY FATHER Official Trailer (2017)"
-        ],
+        "imageCaption": "",
+        "videoCaption": "FIRST THEY KILLED MY FATHER Official Trailer (2017)",
         "likedByMe": false,
         "creationTime": 1503170758000,
         "likes": 5,
@@ -582,19 +422,11 @@
         "id": 1503170757888,
         "name": "Arun Gadag",
         "profilePic": "./assets/arun.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            ""
-        ],
+        "postPic": "",
+        "videoUrl": "",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            ""
-        ],
+        "imageCaption": "",
+        "videoCaption": "",
         "likedByMe": true,
         "creationTime": 1503170757888,
         "likes": 5,
@@ -604,19 +436,11 @@
         "id": 1503170756888,
         "name": "Katie Holmes",
         "profilePic": "./assets/holmes.jpg",
-        "postPic": [
-            ""
-        ],
-        "videoUrl": [
-            "https://www.youtube.com/embed/J5sk8XziXVc"
-        ],
+        "postPic": "",
+        "videoUrl": "https://www.youtube.com/embed/J5sk8XziXVc",
         "text": "",
-        "imageCaption": [
-            ""
-        ],
-        "videoCaption": [
-            "I taught Ellen how to tap dance."
-        ],
+        "imageCaption": "",
+        "videoCaption": "I taught Ellen how to tap dance.",
         "likedByMe": false,
         "creationTime": 1503170658888,
         "likes": 5,
@@ -788,96 +612,6 @@
         "likedByMe": false,
         "creationTime": 1503465523381,
         "likes": 9,
-        "maxLength": 100
-    },
-    {
-        "id": 1503306454000,
-        "name": "Arun Gadag",
-        "text": "",
-        "profilePic": "./assets/arun.jpg",
-        "postPic": "",
-        "videoUrl": "",
-        "extendedText": "hello to all",
-        "imageCaption": "",
-        "videoCaption": "",
-        "likedByMe": false,
-        "creationTime": 1503306454000,
-        "updatedTime": "2017-08-21T09:04:42.586Z",
-        "updatedBy": "",
-        "time": 1503306454000,
-        "likes": null,
-        "maxLength": 100
-    },
-    {
-        "id": 1503308682441,
-        "name": "Arun Gadag",
-        "text": "",
-        "profilePic": "./assets/arun.jpg",
-        "postPic": "",
-        "videoUrl": "",
-        "extendedText": "hlllll",
-        "imageCaption": "",
-        "videoCaption": "",
-        "likedByMe": false,
-        "creationTime": 1503308682442,
-        "updatedTime": "2017-08-21T09:44:35.007Z",
-        "updatedBy": "",
-        "time": 1503308682442,
-        "likes": 7,
-        "maxLength": 100
-    },
-    {
-        "id": 1503308730797,
-        "name": "Arun Gadag",
-        "text": "",
-        "profilePic": "./assets/arun.jpg",
-        "postPic": "",
-        "videoUrl": "",
-        "extendedText": "hiiiiiiiiiiiii",
-        "imageCaption": "",
-        "videoCaption": "",
-        "likedByMe": false,
-        "creationTime": 1503308730797,
-        "updatedTime": "2017-08-21T09:45:24.433Z",
-        "updatedBy": "",
-        "time": 1503308730797,
-        "likes": 15,
-        "maxLength": 100
-    },
-    {
-        "id": 1503382212360,
-        "name": "Arun Gadag",
-        "text": "",
-        "profilePic": "./assets/arun.jpg",
-        "postPic": "",
-        "videoUrl": "",
-        "extendedText": "\ndown vote\nfavorite\nI have a textarea and I want a couple of buttons to always be below the textarea and aligned with the text area's bottom right corner. The closest I got is shown in this fiddle http://jsfiddle.net/leopardy/2uwDT/1/ but its not even aligned all the way to the right in line with the textarea and worse when I resize the textarea via the resize grabber triangle on the bottom right corner, and I move the right line of the text area either to the right or left) the buttons become misaligned even more(even further away from right side of the textarea). One note is that the textarea has to be able to be resized, I can't have it at a set size.",
-        "imageCaption": "",
-        "videoCaption": "",
-        "likedByMe": false,
-        "creationTime": 1503382212360,
-        "updatedTime": "2017-08-22T06:07:21.953Z",
-        "updatedBy": "",
-        "time": 1503382212360,
-        "likes": 8,
-        "maxLength": 100
-    },
-    {
-        "id": 1503465748977,
-        "name": "Arun Gadag",
-        "text": "",
-        "profilePic": "./assets/arun.jpg",
-        "postPic": "",
-        "videoUrl": "",
-        "extendedText": "Hello bdhvbjhd",
-        "imageCaption": "",
-        "videoCaption": "",
-        "likedByMe": false,
-        "creationTime": 1503465748977,
-        "updatedTime": "2017-08-23T05:21:02.563Z",
-        "updatedBy": "",
-        "time": 1503465748977,
-        "likes": 12,
         "maxLength": 100
     },
     {

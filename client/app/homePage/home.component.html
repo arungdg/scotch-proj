@@ -129,7 +129,7 @@
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="userPost.postPic[0]">
+        <ng-container *ngIf="userPost.postPic">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:67%; height:auto; margin-left:65px;">
                     <div class="card-block">
@@ -152,20 +152,20 @@
                                     </div>
                                 </div>
                                 <div class="row" style="margin-left:2%; margin-top: 1%;">
-                                    <p class="card-text" style="color:#727480; font-size: 14px;">{{userPost.imageCaption[0]}}
-                                        <small class="text-muted">{{userPost.postPic[0]}}</small>
+                                    <p class="card-text" style="color:#727480; font-size: 14px;">{{userPost.imageCaption}}
+                                        <br/><small class="card-text" style="color: #C4C7D1; margin-top:1%;">{{userPost.postPic}}</small>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <img class="card-img-bottom embed-responsive-item" [src]=userPost.postPic[0] alt="Card image cap" style="border-radius: 0px 0px 3px 3px;">
+                        <img class="card-img-bottom embed-responsive-item" [src]=userPost.postPic alt="Card image cap" style="border-radius: 0px 0px 3px 3px;">
                     </div>
                 </div>
             </div>
         </ng-container>
-        <ng-container *ngIf="userPost.videoUrl[0]">
+        <ng-container *ngIf="userPost.videoUrl">
             <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:67%; height:auto; margin-left:65px;">
                     <div class="card-block">
@@ -188,15 +188,15 @@
                                     </div>
                                 </div>
                                 <div class="row" style="margin-left:2%; margin-top: 1%;">
-                                    <p class="card-text" style="color:#727480; font-size: 14px;">{{userPost.videoCaption[0]}}
-                                        <small class="text-muted">{{userPost.videoUrl[0]}}</small>
+                                    <p class="card-text" style="color:#727480; font-size: 14px;">{{userPost.videoCaption}}
+                                        <br/><small class="card-text" style="color: #C4C7D1; margin-top:1%;">{{userPost.videoUrl}}</small>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" [src]="userPost.videoUrl[0] | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="embed-responsive-item" [src]="userPost.videoUrl | safe:'resourceUrl'" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
