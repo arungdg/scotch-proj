@@ -131,6 +131,7 @@ img {
 
 .active {
     margin-bottom: 0px;
+    margin-left: 30px;
     border-bottom: 4px solid #01CB99;
 }
 
