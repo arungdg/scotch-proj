@@ -2,6 +2,7 @@ a:link {
     border: none;
     background-color: transparent;
     margin: 0px;
+    padding-bottom: 15px;
     font-size: 12px;
 }
 
@@ -9,6 +10,15 @@ a:hover {
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+input {
+    border: 1px solid #757575;
+}
+
+.active {
+    margin-bottom: 0px;
+    border-bottom: solid #01CB99;
 }
 
 input {
@@ -126,11 +136,6 @@ img {
 
 .dropdown-toggle {
     color: #9E9E9E;
-}
-
-.active {
-    margin-bottom: 0px;
-    border-bottom: 4px solid #01CB99;
 }
 
 .card-img-bottom {
