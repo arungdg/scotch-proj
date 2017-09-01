@@ -55,8 +55,7 @@ textarea {
 }
 
 .modal {
-    vertical-align: middle;
-    background-color: rgba(16, 16, 16, 0.8);
+    background-color: rgba(16, 16, 16, 0.9);
 }
 
 .modal-body {
@@ -66,9 +65,9 @@ textarea {
 
 .modal-content {
     background-color: #E0E0E0;
-    width: 600px;
+    width: 580px;
     margin-left: -50px;
-    margin-top: 40%;
+    margin-top: 35%;
 }
 
 #textArea {
@@ -112,20 +111,21 @@ textarea {
 .modal-header .close {
     outline: none;
     float: right !important;
-    margin-right: -50px !important;
+    margin-right: -40px !important;
     margin-top: -80px !important;
     background-color: transparent !important;
     border: 1px solid grey;
     border-radius: 15px !important;
-    width: 25px !important;
-    height: 25px !important;
+    width: 22px !important;
+    height: 22px !important;
     opacity: 1 !important;
 }
 
 .close {
     color: grey;
     text-shadow: none;
-    font-weight: 300 !important;
+    font-weight: 100 !important;
+    font-size: 20px !important;
 }
 
 .dropdown-toggle {
