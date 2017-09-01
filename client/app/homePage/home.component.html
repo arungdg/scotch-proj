@@ -94,7 +94,7 @@
 <div class="container ">
     <div class="row justify-content-center " *ngFor="let userPost of userPosts " style="margin:20px; ">
         <ng-container *ngIf="userPost.text ">
-            <div class="col align-self-center offset-md-2 ">
+            <div class="col align-self-center offset-md-2">
                 <div class="card" style="width:67%; height:auto; margin-left:65px;">
                     <div class="card-block ">
                         <div class="row">
@@ -115,8 +115,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row" style="margin-left:2%; margin-top: 1%;">
-                                    <p class="card-text" id="userText" style="color: #727480; font-size: 14px;">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
+                                <div class="row" style="margin-left:2%; margin-top: 1%; margin-right: 1%;">
+                                    <p class="card-text" id="userText" style="color: #727480; font-size: 14px; text-align:justify;">{{userPost.text | shorten: userPost.maxLength: '...'}}</p>
                                 </div>
                                 <div class="row" style="margin-left:2%; margin-top: 2%; margin-bottom: -5px;;">
                                     <div [id]=userPost.id *ngIf="userPost.maxLength> 99" (click)="showMore(userPost)" class="expand">
