@@ -16,6 +16,15 @@ input {
     border: 1px solid #757575;
 }
 
+.active {
+    margin-bottom: 0px;
+    border-bottom: solid #01CB99;
+}
+
+input {
+    border: 1px solid #757575;
+}
+
 .dropdown-item {
     background-color: #F5F5F5;
 }
@@ -104,11 +113,6 @@ img {
 
 .dropdown-toggle {
     color: #9E9E9E;
-}
-
-.active {
-    margin-bottom: 0px;
-    border-bottom: 4px solid #01CB99;
 }
 
 .card-img-bottom {
