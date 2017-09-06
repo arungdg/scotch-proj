@@ -7,10 +7,7 @@ import { SafePipeModule } from 'safe-pipe';
 import { RelativeTimeFilterPipe } from './pipes/date.pipe';
 import { ShortenPipe } from "./pipes/shorten";
 
-import { CommentModule } from './Comments/comments.module';
-
 import { AppComponent } from './app.component';
-import { EmitterService } from './emitter.service';
 import { HomeComponent } from './homePage/home.component';
 import { PhotosComponent } from './photos/photos.component';
 import { VideoComponent } from './videos/video.component';
@@ -42,7 +39,6 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
      HttpModule,
     JsonpModule,
-    CommentModule,
     RouterModule.forRoot(
       appRoutes
     ),
@@ -64,8 +60,7 @@ const appRoutes: Routes = [
     ShortenPipe
   ],
   providers: [
-    UserService,
-    EmitterService
+    UserService
   ],
   bootstrap: [ AppComponent ],
   schemas: [ NO_ERRORS_SCHEMA ]
